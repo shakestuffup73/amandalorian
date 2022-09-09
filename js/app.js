@@ -108,11 +108,14 @@ function returnToPub() {
 }
 
 function deliverAssetEnding() {
-  // do things
+  // create and display paragraph ending for deliver asset
+  // create play game again button that calls playGame()
 }
 
 function harborChildEnding() {
-  // do things
+  // create and display paragraph ending for deliver asset
+  // create play game again button that calls playGame()
+
 }
 
 
