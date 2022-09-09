@@ -1,3 +1,22 @@
+// Id's for things
+
+// let pubBtns = document.getElementById('#pub-btns-container')
+// let searchDesertBtn = document.getElementById('#searchDesert-btn')
+// let searchForestBtn = document.getElementById('#searchForest-btn')
+
+// let playDesertGameBtn = document.getElementById('#playDesert-btn')
+// let desertBoard = document.getElementById('#desert-board')
+// let resetDesertGameBtn = document.getElementById('#reset-desert-game')
+
+// let playForestGameBtn = document.getElementById('#playForest-btn')
+// let forestBoard = document.getElementById('#forest-board')
+// let resetForestGameBtn = document.getElementById('#reset-forest-game')
+
+// let returnToPubBtn = document.getElementById('#pub-return')
+
+// let deliverAssetBtn = document.getElementById('#deliver-asset-btn')
+// let harborChildBtn = document.getElementById('#harbor-child-btn')
+
 // Hover on Play Button
       <div id="lone-bountyhunter">
         <h1>A lone bounty hunter embarks on a new quest,</h1>
