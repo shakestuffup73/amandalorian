@@ -1,5 +1,51 @@
-// Amandalorian Pseudo-Code //
+// CONSTANTS //
 
+let desertGame, forestGame
+
+
+// VARIABLES //
+
+let winner
+
+
+
+// CACHED ELEMENT REFERENCES //
+
+let title = document.getElementById('#title')
+
+let playGameBtn = document.getElementById('#playgame-btn')
+let pubBtns = document.getElementById('#pub-btns-container')
+let searchDesertBtn = document.getElementById('#searchDesert-btn')
+let searchForestBtn = document.getElementById('#searchForest-btn')
+
+let playDesertGameBtn = document.getElementById('#playDesert-btn')
+let desertBoard = document.getElementById('#desert-board')
+let resetDesertGameBtn = document.getElementById('#reset-desert-game')
+
+let playForestGameBtn = document.getElementById('#playForest-btn')
+let forestBoard = document.getElementById('#forest-board')
+let resetForestGameBtn = document.getElementById('#reset-forest-game')
+
+let returnToPubBtn = document.getElementById('#pub-return')
+
+let deliverAssetBtn = document.getElementById('#deliver-asset-btn')
+let harborChildBtn = document.getElementById('#harbor-child-btn')
+
+// EVENT LISTENERS //
+
+title.addEventListener('mouseover', handleHover)
+
+
+
+
+// FUNCTIONS // 
+
+function handleHover() {
+  // begin interval lines of intro text on title hover
+
+
+
+}
 
 
 
