@@ -1,5 +1,9 @@
 // Amandalorian Pseudo-Code //
 
+
+
+
+
 // 1. Create opening credits scene
 // 1a) Title centered on landing page, animated to move a bit, background music to Mandalorian opening
 // 1b) Lines of text in individual <div>s introduce the game, hidden until hover over title
