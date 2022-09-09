@@ -8,25 +8,24 @@ let desertGame, forestGame
 let winner
 
 
-
 // CACHED ELEMENT REFERENCES //
 
 let title = document.getElementById('#title')
 
 let playGameBtn = document.getElementById('#playgame-btn')
-let pubBtns = document.getElementById('#pub-btns-container')
-let searchDesertBtn = document.getElementById('#searchDesert-btn')
-let searchForestBtn = document.getElementById('#searchForest-btn')
+// let pubBtns = document.getElementById('#pub-btns-container')
+// let searchDesertBtn = document.getElementById('#searchDesert-btn')
+// let searchForestBtn = document.getElementById('#searchForest-btn')
 
-let playDesertGameBtn = document.getElementById('#playDesert-btn')
-let desertBoard = document.getElementById('#desert-board')
-let resetDesertGameBtn = document.getElementById('#reset-desert-game')
+// let playDesertGameBtn = document.getElementById('#playDesert-btn')
+// let desertBoard = document.getElementById('#desert-board')
+// let resetDesertGameBtn = document.getElementById('#reset-desert-game')
 
-let playForestGameBtn = document.getElementById('#playForest-btn')
-let forestBoard = document.getElementById('#forest-board')
-let resetForestGameBtn = document.getElementById('#reset-forest-game')
+// let playForestGameBtn = document.getElementById('#playForest-btn')
+// let forestBoard = document.getElementById('#forest-board')
+// let resetForestGameBtn = document.getElementById('#reset-forest-game')
 
-let returnToPubBtn = document.getElementById('#pub-return')
+// let returnToPubBtn = document.getElementById('#pub-return')
 
 let deliverAssetBtn = document.getElementById('#deliver-asset-btn')
 let harborChildBtn = document.getElementById('#harbor-child-btn')
@@ -34,19 +33,87 @@ let harborChildBtn = document.getElementById('#harbor-child-btn')
 // EVENT LISTENERS //
 
 title.addEventListener('mouseover', handleHover)
+playGameBtn.addEventListener('click', playGame)
+pubBtns.addEventListener('click', explorePub)
 
+searchDesertBtn.addEventListener('click', renderDesertGame)
+searchForestBtn.addEventListener('click', renderForestGame)
 
+playDesertGameBtn.addEventListener('click', desertGameTimer)
+desertBoard.addEventListener('click', desertBoardClick)
+resetDesertGameBtn.addEventListener('click', renderDesertGame)
+
+playForestGameBtn.addEventListener('click', playForestGame)
+forestBoard.addEventListener('click', forestBoardClick)
+resetForestGameBtn.addEventListener('click', renderForestGame)
+
+returnToPubBtn.addEventListener('click', playGame)
+
+deliverAssetBtn.addEventListener('click', deliverAssetEnding)
+harborChildBtn.addEventListener('click', harborChildEnding)
 
 
 // FUNCTIONS // 
 
 function handleHover() {
   // begin interval lines of intro text on title hover
+  // create divs with textContent...
+  // animate Divs to scroll up the page and disappear
+}
 
+function playGame() {
+  // display the pub scene
+  // create pubBtns, searchDesertBtn, searchForestBtn
+}
 
+function explorePub() {
+  // each pub button displays different media/graphic (short videos) on click
 
 }
 
+function renderDesertGame() {
+  // create & display desert game board
+  // create & display resetDesertGameBtn button
+  // create & display returnToPubBtn -- calls playGame()
+  // randomize location of the child with each reset
+}
+
+function desertGameTimer() {
+  // begin timer
+  // stop game at timer end
+}
+
+function desertBoardClick() {
+  // show jawas or 'the child'
+  // stop game when timer ends
+}
+
+function renderForestGame() {
+  // display desert board
+  // randomize location of the child with each reset
+}
+
+function forestGameTimer() {
+  // begin timer
+  // stop game at timer end - options back to pub or reset game
+}
+
+function forestBoardClick() {
+  // show jawas or 'the child'
+  // stop game when timer ends
+}
+
+function returnToPub() {
+  playGame();
+}
+
+function deliverAssetEnding() {
+  // do things
+}
+
+function harborChildEnding() {
+  // do things
+}
 
 
 
