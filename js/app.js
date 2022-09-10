@@ -21,7 +21,8 @@ const introEl = document.getElementById('intro')
 const titleEl = document.getElementById('title')
 const desertBoard = document.getElementById("desertBoard")
 const forestBoard = document.getElementById("forestBoard")
-
+const desertBoardContainer = document.getElementById("desertBoard-container")
+const forestBoardContainer = document.getElementById("forestBoard-container")
 
 // EVENT LISTENERS //
 
@@ -55,7 +56,6 @@ explorePubBtn.style = "display: none"
 returnToPubBtn.style = "display: none"
 deliverAssetBtn.style = "display: none"
 harborChildBtn.style = "display: none"
-
 
 
 function handleClick() {
@@ -103,6 +103,7 @@ function renderDesertGame() {
       desertBoard.appendChild(divs);
     }
   }
+  forestBoardContainer.innerHTML = ""
   console.log('this is the', desertBoard)
 }
 
@@ -136,6 +137,7 @@ function renderForestGame() {
       forestBoard.appendChild(divs);
     }
   }
+  desertBoardContainer.innerHTML = ""
   console.log('this is the', forestBoard)
 }
 
@@ -170,6 +172,8 @@ function harborChildEnding() {
   explorePubBtn.style = "display: none"
   searchDesertBtn.style = "display: none"
   returnToPubBtn.style = "display: default"
+  // desertBoardContainer.innerHTML = ""
+  // forestBoardContainer.innerHTML = ""
   // create and display paragraph ending for deliver asset
   // create play game again button that calls playGame()
 }
