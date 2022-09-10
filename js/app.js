@@ -60,7 +60,7 @@ function handleClick() {
 
   let searchForestBtn = document.createElement('button');
     searchForestBtn.innerText = "Search the Forest";
-    searchForestBtn.setAttribute 
+    searchForestBtn.setAttribute('id', 'searchForestBtn')
     document.body.appendChild(searchForestBtn);
 
   let searchDesertBtn = document.createElement('button');
@@ -70,6 +70,7 @@ function handleClick() {
 
   let explorePubBtn = document.createElement('button')
     explorePubBtn.innerText = "Explore the Pub"
+    explorePubBtn.setAttribute('id', 'explorePubBtn')
     document.body.appendChild(explorePubBtn);
   // begin interval lines of intro text on title hover
   // animate Divs to scroll up the page and disappear
