@@ -103,7 +103,6 @@ function renderDesertGame() {
       desertBoard.appendChild(divs);
     }
   }
-  forestBoard.style = "display: none";
   console.log('this is the', desertBoard)
 }
 
@@ -137,8 +136,6 @@ function renderForestGame() {
       forestBoard.appendChild(divs);
     }
   }
-
-  desertBoard.style = "display: none"
   console.log('this is the', forestBoard)
 }
 
