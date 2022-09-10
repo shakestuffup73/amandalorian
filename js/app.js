@@ -88,21 +88,22 @@ function initDesert() {
 }
 
 function renderDesertGame() {
-  console.log('this is the desert game')
+  console.log('this is the desert game');
 
-  searchForestBtn.style = "display: none"
-  explorePubBtn.style = "display: none"
-  searchDesertBtn.style = "display: none"
-  returnToPubBtn.style = "display: default"
+  searchForestBtn.style = "display: none";
+  explorePubBtn.style = "display: none";
+  searchDesertBtn.style = "display: none";
+  returnToPubBtn.style = "display: default";
 
   for (i = 0; i < 6; i++) {
     for (let j = 0; j < 6; j++) {
-      let divs = document.createElement('div')
+      let divs = document.createElement('div');
       divs.className = "squares";
-      divs.id = `row-${i}, column-${j}`
-      desertBoard.appendChild(divs)
+      divs.id = `row-${i}, column-${j}`;
+      desertBoard.appendChild(divs);
     }
   }
+  forestBoard.style = "display: none";
   console.log('this is the', desertBoard)
 }
 
@@ -117,25 +118,27 @@ function initForest() {
   ]
   winner = null;
 
-  renderForestGame()
+  renderForestGame();
 }
 
 function renderForestGame() {
-  console.log('this is the desert game')
+  console.log('this is the forest game');
 
-  searchForestBtn.style = "display: none"
-  explorePubBtn.style = "display: none"
-  searchDesertBtn.style = "display: none"
-  returnToPubBtn.style = "display: default"
+  searchForestBtn.style = "display: none";
+  explorePubBtn.style = "display: none";
+  searchDesertBtn.style = "display: none";
+  returnToPubBtn.style = "display: default";
 
   for (i = 0; i < 6; i++) {
     for (let j = 0; j < 6; j++) {
-      let divs = document.createElement('div')
+      let divs = document.createElement('div');
       divs.className = "squares";
       divs.id = `row-${i}, column-${j}`;
-      forestBoard.appendChild(divs)
+      forestBoard.appendChild(divs);
     }
   }
+
+  desertBoard.style = "display: none"
   console.log('this is the', forestBoard)
 }
 
@@ -144,8 +147,6 @@ function returnToPub() {
   explorePubBtn.style = "display: default"
   searchForestBtn.style = "display: default"
   searchDesertBtn.style = "display: default"
-  forestBoard.style = "display: none"
-  desertBoard.style = "display: none"
 }
 
 function desertGameTimer() {
@@ -153,19 +154,9 @@ function desertGameTimer() {
   // stop game at timer end
 }
 
-function desertBoardClick() {
-  // show jawas or 'the child'
-  // stop game when timer ends
-}
-
 function forestGameTimer() {
   // begin timer
   // stop game at timer end - options back to pub or reset game
-}
-
-function forestBoardClick() {
-  // show jawas or 'the child'
-  // stop game when timer ends
 }
 
 function deliverAssetEnding() {

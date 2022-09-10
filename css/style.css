@@ -4,18 +4,26 @@
   color: white
 }
 
-.squares {
-  color: black;
-}
-
 #desertBoard {
   display: grid;
-  grid-template-columns: 6;
-  grid-template-rows: 6;
+  grid-template-rows: repeat(6, 15vmin);
+  grid-template-columns: repeat(6, 15vmin);
+  grid-gap: 1vmin;
 }
 
 #forestBoard {
   display: grid;
-  grid-template-rows: 6;
-  grid-template-columns: 6;
+  grid-template-rows: repeat(6, 15vmin);
+  grid-template-columns: repeat(6, 15vmin);
+  grid-gap: 1vmin;
 }
+
+.squares {
+  border: 2px solid salmon;
+}
+
+.squares2 {
+  border: 2px solid salmon;
+}
+
+
