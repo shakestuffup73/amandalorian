@@ -16,26 +16,21 @@ let winner
 
 // CACHED ELEMENT REFERENCES //
 
-const playGameBtn = document.getElementById('playGame-btn')
+const playGameBtn = document.getElementById('playGameBtn')
 const introEl = document.getElementById('intro')
 const titleEl = document.getElementById('title')
-const searchDesertBtn = document.getElementById('searchDesertBtn')
-
-
-// let playGameBtn = document.getElementById('playgame-btn')
+// const searchDesertBtn = document.getElementById('searchDesertBtn')
+// const searchForestBtn = document.getElementById('searchForestBtn')
+// const explorePubBtn = document.getElementById('explorePubBtn')
 
 
 // EVENT LISTENERS //
 
-playGameBtn.addEventListener('click', handleClick)
+playGameBtn.addEventListener('click', handleClick);
+searchForestBtn.addEventListener('click', renderForestGame);
+searchDesertBtn.addEventListener('click', renderDesertGame);
+explorePubBtn.addEventListener('click', explorePub);
 
-searchDesertBtn.addEventListener('click', renderDesertGame)
-
-
-
-// explorePubBtn.addEventListener('click', explorePub)
-// searchDesertBtn.addEventListener('click', renderDesertGame)
-// searchForestBtn.addEventListener('click', renderForestGame)
 
 // playDesertGameBtn.addEventListener('click', desertGameTimer)
 // desertBoard.addEventListener('click', desertBoardClick)
@@ -53,48 +48,50 @@ searchDesertBtn.addEventListener('click', renderDesertGame)
 
 // FUNCTIONS // 
 
+searchDesertBtn.style = "display: none"
+searchForestBtn.style = "display: none"
+explorePubBtn.style = "display: none"
+
+
 function handleClick() {
   introEl.style = "display: none"
   titleEl.style = "display: none"
   playGameBtn.style = "display: none"
 
-  let searchForestBtn = document.createElement('button');
-    searchForestBtn.innerText = "Search the Forest";
-    searchForestBtn.setAttribute('id', 'searchForestBtn')
-    document.body.appendChild(searchForestBtn);
-
-  let searchDesertBtn = document.createElement('button');
-    searchDesertBtn.innerText = "Search the Desert";
-    searchDesertBtn.setAttribute('id', 'searchDesertBtn')
-    document.body.appendChild(searchDesertBtn);
-
-  let explorePubBtn = document.createElement('button')
-    explorePubBtn.innerText = "Explore the Pub"
-    explorePubBtn.setAttribute('id', 'explorePubBtn')
-    document.body.appendChild(explorePubBtn);
-  // begin interval lines of intro text on title hover
-  // animate Divs to scroll up the page and disappear
+  explorePubBtn.style = "display: default"
+  searchForestBtn.style = "display: default"
+  searchDesertBtn.style = "display: default"
 }
 
-// function explorePub() {
-//   // each pub button displays different media/graphic (short videos) on click
+function explorePub() {
+  // each pub button displays different media/graphic (short videos) on click
+}
+
+// function renderDesertGame() {
+//   // create & display desert game board
+//   // create & display resetDesertGameBtn button
+//   // create & display returnToPubBtn -- calls playGame()
+//   // randomize location of the child with each reset
 // }
 
-function renderDesertGame() {
+function renderForestGame() {
+  console.log('this is the forest button');
 
   searchForestBtn.style = "display: none"
-  searchDesertBtn.style = "display: none"
   explorePubBtn.style = "display: none"
-  // create & display desert game board
-  // create & display resetDesertGameBtn button
-  // create & display returnToPubBtn -- calls playGame()
+  searchDesertBtn.style = "display: none"
+  // display desert board
+  
+
   // randomize location of the child with each reset
 }
 
-function renderForestGame() {
+function renderDesertGame() {
+  console.log('this is the desert game')
 
-  // display desert board
-  // randomize location of the child with each reset
+  searchForestBtn.style = "display: none"
+  explorePubBtn.style = "display: none"
+  searchDesertBtn.style = "display: none"
 }
 
 function desertGameTimer() {
@@ -106,7 +103,6 @@ function desertBoardClick() {
   // show jawas or 'the child'
   // stop game when timer ends
 }
-
 
 function forestGameTimer() {
   // begin timer
@@ -130,9 +126,7 @@ function deliverAssetEnding() {
 function harborChildEnding() {
   // create and display paragraph ending for deliver asset
   // create play game again button that calls playGame()
-
 }
-
 
 
 // 1. Create opening credits scene
