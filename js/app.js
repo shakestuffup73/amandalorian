@@ -3,11 +3,14 @@
 let desertGame, forestGame
 
 let explorePubMedia = [
-
-
-
 ]
 
+let randomJawas = [
+  "source, /media/jawa.jpg",
+  "source, /media/jawa.jpg",
+  "source, /media/jawa.jpg",
+  "source, /media/jawa.jpg",  
+]
 
 // VARIABLES //
 
@@ -21,16 +24,17 @@ const introEl = document.getElementById('intro')
 const titleEl = document.getElementById('title')
 const desertBoard = document.getElementById("desertBoard")
 const forestBoard = document.getElementById("forestBoard")
-const desertBoardContainer = document.getElementById("desertBoard-container")
-const forestBoardContainer = document.getElementById("forestBoard-container")
+const squareEls = document.querySelectorAll('.square')
 
 // EVENT LISTENERS //
 
-playGameBtn.addEventListener('click', handleClick);
+playGameBtn.addEventListener('click', handlePlayClick);
+
 searchForestBtn.addEventListener('click', renderForestGame);
 searchDesertBtn.addEventListener('click', renderDesertGame);
 explorePubBtn.addEventListener('click', explorePub);
 returnToPubBtn.addEventListener('click', returnToPub);
+
 deliverAssetBtn.addEventListener('click', deliverAssetEnding);
 harborChildBtn.addEventListener('click', harborChildEnding);
 
@@ -50,23 +54,23 @@ harborChildBtn.addEventListener('click', harborChildEnding);
 
 // FUNCTIONS // 
 
-searchDesertBtn.style = "display: none"
-searchForestBtn.style = "display: none"
-explorePubBtn.style = "display: none"
-returnToPubBtn.style = "display: none"
-deliverAssetBtn.style = "display: none"
-harborChildBtn.style = "display: none"
+searchDesertBtn.style.display = "none"
+searchForestBtn.style.display = "none"
+explorePubBtn.style.display = "none"
+returnToPubBtn.style.display = "none"
+deliverAssetBtn.style.display = "none"
+harborChildBtn.style.display = "none"
 
 
-function handleClick() {
-  introEl.style = "display: none"
-  titleEl.style = "display: none"
-  playGameBtn.style = "display: none"
-  returnToPubBtn.style = "display: none"
+function handlePlayClick() {
+  introEl.style.display = "none"
+  titleEl.style.display = "none"
+  playGameBtn.style.display = "none"
+  returnToPubBtn.style.display = "none"
 
-  explorePubBtn.style = "display: default"
-  searchForestBtn.style = "display: default"
-  searchDesertBtn.style = "display: default"
+  explorePubBtn.style.display = "block"
+  searchForestBtn.style.display = "block"
+  searchDesertBtn.style.display = "block"
 }
 
 function explorePub() {
@@ -83,29 +87,34 @@ function initDesert() {
     null, null, null, null, null, null,
   ]
   winner = null;
-
+  
   renderDesertGame()
 }
 
 function renderDesertGame() {
+  forestBoard.style.display = "none";
+  desertBoard.style.display = "grid"
+  
   console.log('this is the desert game');
-
-  searchForestBtn.style = "display: none";
-  explorePubBtn.style = "display: none";
-  searchDesertBtn.style = "display: none";
-  returnToPubBtn.style = "display: default";
-
+  
+  searchForestBtn.style.display = "none";
+  explorePubBtn.style.display = "none";
+  searchDesertBtn.style.display = "none";
+  returnToPubBtn.style.display = "block";
+  
+  let count = 0;
   for (i = 0; i < 6; i++) {
     for (let j = 0; j < 6; j++) {
-      let divs = document.createElement('div');
-      divs.className = "squares";
-      divs.id = `row-${i}, column-${j}`;
-      desertBoard.appendChild(divs);
+      let div = document.createElement('div');
+      div.className = "square";
+      div.id = `sq${count}`;
+      count++;
+      desertBoard.appendChild(div);
     }
   }
-  forestBoardContainer.innerHTML = ""
   console.log('this is the', desertBoard)
 }
+
 
 function initForest() {
   forestBoard = [
@@ -121,31 +130,57 @@ function initForest() {
   renderForestGame();
 }
 
+
 function renderForestGame() {
-  console.log('this is the forest game');
+  desertBoard.style.display = "none";
+  forestBoard.style.display = "grid";
 
-  searchForestBtn.style = "display: none";
-  explorePubBtn.style = "display: none";
-  searchDesertBtn.style = "display: none";
-  returnToPubBtn.style = "display: default";
-
+  searchForestBtn.style.display = "none";
+  explorePubBtn.style.display = "none";
+  searchDesertBtn.style.display = "none";
+  returnToPubBtn.style.display = "block";
+  
+  let count = 0;
   for (i = 0; i < 6; i++) {
     for (let j = 0; j < 6; j++) {
-      let divs = document.createElement('div');
-      divs.className = "squares";
-      divs.id = `row-${i}, column-${j}`;
-      forestBoard.appendChild(divs);
+      let div = document.createElement('div');
+      div.className = "square";
+      div.id = `sq${count}`;
+      count++
+      forestBoard.appendChild(div);
     }
   }
-  desertBoardContainer.innerHTML = ""
   console.log('this is the', forestBoard)
 }
 
+
+
+
+
+
+// let img = div.createElement('img')
+// img.setAttribute("source", "URL") // source for image
+// div.appendChild(img) // this appends each image to each div
+
+
+
+// randomize the board function
+  // once the board is random, renderForestGame() based on what's in the board...(images in all the divs face-down...)
+
+// renderTile function to display what's inside of each tile --> set winner being the child...will have to call a getWinner() function
+// set up a handleclick for each board position/tile...on each click, then do the game logic...at the end of the handleclick, do the renderTile()
+
+
 function returnToPub() {
-  returnToPubBtn.style = "display: none"
-  explorePubBtn.style = "display: default"
-  searchForestBtn.style = "display: default"
-  searchDesertBtn.style = "display: default"
+  returnToPubBtn.style.display = "none"
+  explorePubBtn.style.display = "block"
+  searchForestBtn.style.display = "block"
+  searchDesertBtn.style.display = "block"
+
+  desertBoard.style.display = "none"
+  desertBoard.innerHTML = ""
+  forestBoard.style.display = "none"
+  forestBoard.innerHTML = ""
 }
 
 function desertGameTimer() {
@@ -159,21 +194,20 @@ function forestGameTimer() {
 }
 
 function deliverAssetEnding() {
-  searchForestBtn.style = "display: none"
-  explorePubBtn.style = "display: none"
-  searchDesertBtn.style = "display: none"
-  returnToPubBtn.style = "display: default"
+  searchForestBtn.style.display = "none"
+  explorePubBtn.style.display = "none"
+  searchDesertBtn.style.display = "none"
+  returnToPubBtn.style.display = "block"
   // create and display paragraph ending for deliver asset
   // create play game again button that calls playGame()
 }
 
 function harborChildEnding() {
-  searchForestBtn.style = "display: none"
-  explorePubBtn.style = "display: none"
-  searchDesertBtn.style = "display: none"
-  returnToPubBtn.style = "display: default"
-  // desertBoardContainer.innerHTML = ""
-  // forestBoardContainer.innerHTML = ""
+  searchForestBtn.style.display = "none"
+  explorePubBtn.style.display = "none"
+  searchDesertBtn.style.display = "none"
+  returnToPubBtn.style.display = "block"
+
   // create and display paragraph ending for deliver asset
   // create play game again button that calls playGame()
 }

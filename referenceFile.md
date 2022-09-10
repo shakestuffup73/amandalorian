@@ -205,3 +205,61 @@
           trade the spaceship in for a minivan. The End.</h2>
       </div>
     </section>
+
+
+    // MEDIA FILES
+
+    ** babyyoda.jpg
+    lucasfilm/disney/kobal/shutterstock
+
+    ** MandoJawas.jpg
+    https://disneyartonmain.com/products/mandalorian-art-searching-by-doug-chiaing
+
+    ** MandoBabyYoda.jpg
+    https://www.space.com/star-wars-art-mandalorian-book
+    The Art of The Mandalorian Season 2 - Abrams Books
+
+    ** MandoWithFloatingPod.jpg
+    (Concept art by Ryan Church and Nick Gindraux)
+    ** MandoFightsRhino.jpg
+    (Concept art by Christian Alzmann.)
+    ** BabyYodaEatsFrog.jpg
+    (Concept art by Christian Alzmann.)
+    https://www.starwars.com/news/the-art-of-the-mandalorian
+
+    ** MandoStarWars.jpg
+    https://www.starwars.com/series/the-mandalorian
+
+    ** TheForest.jpg
+    https://www.starwars.com/databank/corvus
+
+    ** IHaveSpoken.jpg
+
+
+    ** jawa.jpg
+    disney
+    https://www.menshealth.com/entertainment/a29809633/the-mandalorian-jawa-star-wars/
+    ** jawas.jpg
+    disney.com
+
+
+
+
+    jawas.gif
+
+    https://tenor.com/view/the-mandalorian-jawa-you-speak-terrible-jawa-wookie-gif-15568912
+
+    Embed: <div class="tenor-gif-embed" data-postid="15568912" data-share-method="host" data-aspect-ratio="1.30081" data-width="100%"><a href="https://tenor.com/view/the-mandalorian-jawa-you-speak-terrible-jawa-wookie-gif-15568912">The Mandalorian Jawa GIF</a>from <a href="https://tenor.com/search/the+mandalorian-gifs">The Mandalorian GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+
+    surprisebabyyoda.gif
+    https://tenor.com/view/mandalorian-baby-yoda-hello-gif-19013340
+
+    Embed: <div class="tenor-gif-embed" data-postid="19013340" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/mandalorian-baby-yoda-hello-gif-19013340">Mandalorian Baby Yoda GIF</a>from <a href="https://tenor.com/search/mandalorian-gifs">Mandalorian GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+
+    ** mandalorian baby yoda gif
+    https://tenor.com/view/the-mandalorian-baby-yoda-baby-yoda-happy-happy-driving-fast-gif-15921407
+
+    Embed: <div class="tenor-gif-embed" data-postid="15921407" data-share-method="host" data-aspect-ratio="2.11921" data-width="100%"><a href="https://tenor.com/view/the-mandalorian-baby-yoda-baby-yoda-happy-happy-driving-fast-gif-15921407">The Mandalorian Baby Yoda GIF</a>from <a href="https://tenor.com/search/the+mandalorian-gifs">The Mandalorian GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
