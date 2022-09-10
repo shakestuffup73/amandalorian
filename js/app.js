@@ -19,9 +19,8 @@ let winner
 const playGameBtn = document.getElementById('playGameBtn')
 const introEl = document.getElementById('intro')
 const titleEl = document.getElementById('title')
-// const searchDesertBtn = document.getElementById('searchDesertBtn')
-// const searchForestBtn = document.getElementById('searchForestBtn')
-// const explorePubBtn = document.getElementById('explorePubBtn')
+const desertBoard = document.getElementById("desertBoard")
+const forestBoard = document.getElementById("forestBoard")
 
 
 // EVENT LISTENERS //
@@ -30,7 +29,9 @@ playGameBtn.addEventListener('click', handleClick);
 searchForestBtn.addEventListener('click', renderForestGame);
 searchDesertBtn.addEventListener('click', renderDesertGame);
 explorePubBtn.addEventListener('click', explorePub);
-
+returnToPubBtn.addEventListener('click', returnToPub);
+deliverAssetBtn.addEventListener('click', deliverAssetEnding);
+harborChildBtn.addEventListener('click', harborChildEnding);
 
 // playDesertGameBtn.addEventListener('click', desertGameTimer)
 // desertBoard.addEventListener('click', desertBoardClick)
@@ -51,12 +52,17 @@ explorePubBtn.addEventListener('click', explorePub);
 searchDesertBtn.style = "display: none"
 searchForestBtn.style = "display: none"
 explorePubBtn.style = "display: none"
+returnToPubBtn.style = "display: none"
+deliverAssetBtn.style = "display: none"
+harborChildBtn.style = "display: none"
+
 
 
 function handleClick() {
   introEl.style = "display: none"
   titleEl.style = "display: none"
   playGameBtn.style = "display: none"
+  returnToPubBtn.style = "display: none"
 
   explorePubBtn.style = "display: default"
   searchForestBtn.style = "display: default"
@@ -67,23 +73,18 @@ function explorePub() {
   // each pub button displays different media/graphic (short videos) on click
 }
 
-// function renderDesertGame() {
-//   // create & display desert game board
-//   // create & display resetDesertGameBtn button
-//   // create & display returnToPubBtn -- calls playGame()
-//   // randomize location of the child with each reset
-// }
+function initDesert() {
+  desertBoard = [
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+  ]
+  winner = null;
 
-function renderForestGame() {
-  console.log('this is the forest button');
-
-  searchForestBtn.style = "display: none"
-  explorePubBtn.style = "display: none"
-  searchDesertBtn.style = "display: none"
-  // display desert board
-  
-
-  // randomize location of the child with each reset
+  renderDesertGame()
 }
 
 function renderDesertGame() {
@@ -92,6 +93,59 @@ function renderDesertGame() {
   searchForestBtn.style = "display: none"
   explorePubBtn.style = "display: none"
   searchDesertBtn.style = "display: none"
+  returnToPubBtn.style = "display: default"
+
+  for (i = 0; i < 6; i++) {
+    for (let j = 0; j < 6; j++) {
+      let divs = document.createElement('div')
+      divs.className = "squares";
+      divs.id = `row-${i}, column-${j}`
+      desertBoard.appendChild(divs)
+    }
+  }
+  console.log('this is the', desertBoard)
+}
+
+function initForest() {
+  forestBoard = [
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+    null, null, null, null, null, null,
+  ]
+  winner = null;
+
+  renderForestGame()
+}
+
+function renderForestGame() {
+  console.log('this is the desert game')
+
+  searchForestBtn.style = "display: none"
+  explorePubBtn.style = "display: none"
+  searchDesertBtn.style = "display: none"
+  returnToPubBtn.style = "display: default"
+
+  for (i = 0; i < 6; i++) {
+    for (let j = 0; j < 6; j++) {
+      let divs = document.createElement('div')
+      divs.className = "squares";
+      divs.id = `row-${i}, column-${j}`;
+      forestBoard.appendChild(divs)
+    }
+  }
+  console.log('this is the', forestBoard)
+}
+
+function returnToPub() {
+  returnToPubBtn.style = "display: none"
+  explorePubBtn.style = "display: default"
+  searchForestBtn.style = "display: default"
+  searchDesertBtn.style = "display: default"
+  forestBoard.style = "display: none"
+  desertBoard.style = "display: none"
 }
 
 function desertGameTimer() {
@@ -114,16 +168,20 @@ function forestBoardClick() {
   // stop game when timer ends
 }
 
-function returnToPub() {
-  playGame();
-}
-
 function deliverAssetEnding() {
+  searchForestBtn.style = "display: none"
+  explorePubBtn.style = "display: none"
+  searchDesertBtn.style = "display: none"
+  returnToPubBtn.style = "display: default"
   // create and display paragraph ending for deliver asset
   // create play game again button that calls playGame()
 }
 
 function harborChildEnding() {
+  searchForestBtn.style = "display: none"
+  explorePubBtn.style = "display: none"
+  searchDesertBtn.style = "display: none"
+  returnToPubBtn.style = "display: default"
   // create and display paragraph ending for deliver asset
   // create play game again button that calls playGame()
 }
