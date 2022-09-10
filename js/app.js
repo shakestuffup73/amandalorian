@@ -9,6 +9,10 @@ let desertPics = [
   './media/jawa.jpg',
   './media/jawa.jpg',
   './media/jawa.jpg',
+  './media/rhino.jpg',
+  './media/rhino.jpg',
+  './media/rhino.jpg',
+  './media/rhino.jpg'
 ]
 
 // VARIABLES //
@@ -100,11 +104,7 @@ function renderDesertGame() {
       let randomDesertPic = desertPics[Math.floor(Math.random() * desertPics.length)]
       desertImg.setAttribute('src', randomDesertPic)
 
-      console.log('i dunno what random desert pic is', randomDesertPic)
-
-      console.log('this is the desert image', desertImg)
-
-      desertBoard.appendChild(desertImg)
+      div.appendChild(desertImg)
       count++;
       desertBoard.appendChild(div);
     }

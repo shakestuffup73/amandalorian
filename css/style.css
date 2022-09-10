@@ -6,15 +6,15 @@
 
 #desertBoard {
   display: grid;
-  grid-template-rows: repeat(6, 12vmin);
-  grid-template-columns: repeat(6, 12vmin);
+  grid-template-rows: repeat(6, 15vmin);
+  grid-template-columns: repeat(6, 15vmin);
   grid-gap: 1vmin;
 }
 
 #forestBoard {
   display: grid;
-  grid-template-rows: repeat(6, 12vmin);
-  grid-template-columns: repeat(6, 12vmin);
+  grid-template-rows: repeat(6, 15vmin);
+  grid-template-columns: repeat(6, 15vmin);
   grid-gap: 1vmin;
 }
 
