@@ -2,6 +2,12 @@
 
 let desertGame, forestGame
 
+let explorePubMedia = [
+
+
+
+]
+
 
 // VARIABLES //
 
@@ -10,56 +16,83 @@ let winner
 
 // CACHED ELEMENT REFERENCES //
 
-let title = document.getElementById('#title')
+const playGameBtn = document.getElementById('playGame-btn')
+const introEl = document.getElementById('intro')
+const titleEl = document.getElementById('title')
+const searchDesertBtn = document.getElementById('searchDesertBtn')
 
-let playGameBtn = document.getElementById('#playgame-btn')
+
+// let playGameBtn = document.getElementById('playgame-btn')
 
 
 // EVENT LISTENERS //
 
-title.addEventListener('mouseover', handleHover)
-playGameBtn.addEventListener('click', playGame)
-pubBtns.addEventListener('click', explorePub)
+playGameBtn.addEventListener('click', handleClick)
 
 searchDesertBtn.addEventListener('click', renderDesertGame)
-searchForestBtn.addEventListener('click', renderForestGame)
 
-playDesertGameBtn.addEventListener('click', desertGameTimer)
-desertBoard.addEventListener('click', desertBoardClick)
-resetDesertGameBtn.addEventListener('click', renderDesertGame)
 
-playForestGameBtn.addEventListener('click', playForestGame)
-forestBoard.addEventListener('click', forestBoardClick)
-resetForestGameBtn.addEventListener('click', renderForestGame)
 
-returnToPubBtn.addEventListener('click', playGame)
+// explorePubBtn.addEventListener('click', explorePub)
+// searchDesertBtn.addEventListener('click', renderDesertGame)
+// searchForestBtn.addEventListener('click', renderForestGame)
 
-deliverAssetBtn.addEventListener('click', deliverAssetEnding)
-harborChildBtn.addEventListener('click', harborChildEnding)
+// playDesertGameBtn.addEventListener('click', desertGameTimer)
+// desertBoard.addEventListener('click', desertBoardClick)
+// resetDesertGameBtn.addEventListener('click', renderDesertGame)
+
+// playForestGameBtn.addEventListener('click', forestGameTimer)
+// forestBoard.addEventListener('click', forestBoardClick)
+// resetForestGameBtn.addEventListener('click', renderForestGame)
+
+// returnToPubBtn.addEventListener('click', playGame)
+
+// deliverAssetBtn.addEventListener('click', deliverAssetEnding)
+// harborChildBtn.addEventListener('click', harborChildEnding)
 
 
 // FUNCTIONS // 
 
-function handleHover() {
+function handleClick() {
+  introEl.style = "display: none"
+  titleEl.style = "display: none"
+  playGameBtn.style = "display: none"
+
+  let searchForestBtn = document.createElement('button');
+    searchForestBtn.innerText = "Search the Forest";
+    searchForestBtn.setAttribute 
+    document.body.appendChild(searchForestBtn);
+
+  let searchDesertBtn = document.createElement('button');
+    searchDesertBtn.innerText = "Search the Desert";
+    searchDesertBtn.setAttribute('id', 'searchDesertBtn')
+    document.body.appendChild(searchDesertBtn);
+
+  let explorePubBtn = document.createElement('button')
+    explorePubBtn.innerText = "Explore the Pub"
+    document.body.appendChild(explorePubBtn);
   // begin interval lines of intro text on title hover
-  // create divs with textContent...
   // animate Divs to scroll up the page and disappear
 }
 
-function playGame() {
-  // display the pub scene
-  // create pubBtns, searchDesertBtn, searchForestBtn
-}
-
-function explorePub() {
-  // each pub button displays different media/graphic (short videos) on click
-
-}
+// function explorePub() {
+//   // each pub button displays different media/graphic (short videos) on click
+// }
 
 function renderDesertGame() {
+
+  searchForestBtn.style = "display: none"
+  searchDesertBtn.style = "display: none"
+  explorePubBtn.style = "display: none"
   // create & display desert game board
   // create & display resetDesertGameBtn button
   // create & display returnToPubBtn -- calls playGame()
+  // randomize location of the child with each reset
+}
+
+function renderForestGame() {
+
+  // display desert board
   // randomize location of the child with each reset
 }
 
@@ -73,10 +106,6 @@ function desertBoardClick() {
   // stop game when timer ends
 }
 
-function renderForestGame() {
-  // display desert board
-  // randomize location of the child with each reset
-}
 
 function forestGameTimer() {
   // begin timer
