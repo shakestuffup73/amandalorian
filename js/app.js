@@ -5,11 +5,10 @@ let desertGame, forestGame
 let explorePubMedia = [
 ]
 
-let randomJawas = [
-  "source, /media/jawa.jpg",
-  "source, /media/jawa.jpg",
-  "source, /media/jawa.jpg",
-  "source, /media/jawa.jpg",  
+let desertPics = [
+  './media/jawa.jpg',
+  './media/jawa.jpg',
+  './media/jawa.jpg',
 ]
 
 // VARIABLES //
@@ -35,21 +34,10 @@ searchDesertBtn.addEventListener('click', renderDesertGame);
 explorePubBtn.addEventListener('click', explorePub);
 returnToPubBtn.addEventListener('click', returnToPub);
 
+desertBoard.addEventListener('click', playDesertGame)
+
 deliverAssetBtn.addEventListener('click', deliverAssetEnding);
 harborChildBtn.addEventListener('click', harborChildEnding);
-
-// playDesertGameBtn.addEventListener('click', desertGameTimer)
-// desertBoard.addEventListener('click', desertBoardClick)
-// resetDesertGameBtn.addEventListener('click', renderDesertGame)
-
-// playForestGameBtn.addEventListener('click', forestGameTimer)
-// forestBoard.addEventListener('click', forestBoardClick)
-// resetForestGameBtn.addEventListener('click', renderForestGame)
-
-// returnToPubBtn.addEventListener('click', playGame)
-
-// deliverAssetBtn.addEventListener('click', deliverAssetEnding)
-// harborChildBtn.addEventListener('click', harborChildEnding)
 
 
 // FUNCTIONS // 
@@ -87,33 +75,53 @@ function initDesert() {
     null, null, null, null, null, null,
   ]
   winner = null;
-  
+
   renderDesertGame()
 }
 
 function renderDesertGame() {
   forestBoard.style.display = "none";
   desertBoard.style.display = "grid"
-  
+
   console.log('this is the desert game');
-  
+
   searchForestBtn.style.display = "none";
   explorePubBtn.style.display = "none";
   searchDesertBtn.style.display = "none";
   returnToPubBtn.style.display = "block";
-  
+
   let count = 0;
   for (i = 0; i < 6; i++) {
     for (let j = 0; j < 6; j++) {
       let div = document.createElement('div');
       div.className = "square";
       div.id = `sq${count}`;
+      let desertImg = document.createElement('img')
+      let randomDesertPic = desertPics[Math.floor(Math.random() * desertPics.length)]
+      desertImg.setAttribute('src', randomDesertPic)
+
+      console.log('i dunno what random desert pic is', randomDesertPic)
+
+      console.log('this is the desert image', desertImg)
+
+      desertBoard.appendChild(desertImg)
       count++;
       desertBoard.appendChild(div);
     }
   }
   console.log('this is the', desertBoard)
 }
+
+
+function playDesertGame() {
+  console.log('clicking the desert squares')
+  // on click of each div square, flip over image to reveal image from randomized array
+  // if randomized array image is Baby Yoda, win
+  // on first click, timer starts
+  // at end of timer, game starts over & re-randomizes array you click
+
+}
+
 
 
 function initForest() {
@@ -139,7 +147,7 @@ function renderForestGame() {
   explorePubBtn.style.display = "none";
   searchDesertBtn.style.display = "none";
   returnToPubBtn.style.display = "block";
-  
+
   let count = 0;
   for (i = 0; i < 6; i++) {
     for (let j = 0; j < 6; j++) {
@@ -165,7 +173,7 @@ function renderForestGame() {
 
 
 // randomize the board function
-  // once the board is random, renderForestGame() based on what's in the board...(images in all the divs face-down...)
+// once the board is random, renderForestGame() based on what's in the board...(images in all the divs face-down...)
 
 // renderTile function to display what's inside of each tile --> set winner being the child...will have to call a getWinner() function
 // set up a handleclick for each board position/tile...on each click, then do the game logic...at the end of the handleclick, do the renderTile()
