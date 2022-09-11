@@ -51,6 +51,7 @@ const squareEls = document.querySelectorAll('.square')
 const pubMediaDiv = document.getElementById('pubMedia')
 const desertTimer = document.getElementById('desertTimer')
 const winnerDiv = document.getElementById('winDiv')
+const deliverAssetEnd = document.getElementById('deliverAssetEnd')
 
 // EVENT LISTENERS //
 
@@ -192,6 +193,7 @@ function desertWinner(event) {
     forestBoard.style.display = "none";
     winnerDiv.style.display = "block";
     desertTimer.style.display = "none";
+    returnToPubBtn.style.display = "none";
 
     winnerDiv.textContent = "You found Baby Yoda!"
 
@@ -283,6 +285,7 @@ function forestWinner(event) {
     forestBoard.style.display = "none";
     winnerDiv.style.display = "block";
     forestTimer.style.display = "none";
+    returnToPubBtn.style.display = "none";
 
     winnerDiv.textContent = "You found Baby Yoda!"
 
@@ -306,6 +309,7 @@ function returnToPub() {
   returnToPubBtn.style.display = "none"
   deliverAssetBtn.style.display = "none"
   harborChildBtn.style.display = "none"
+  deliverAssetEnd.style.display = "none"
   
   explorePubBtn.style.display = "block"
   searchForestBtn.style.display = "block"
@@ -313,21 +317,23 @@ function returnToPub() {
 }
 
 function deliverAssetEnding() {
-  desertBoard.hidden = true;
-  forestBoard.hidden = true;
-  deliverAssetBtn.style.display = "none"
-  harborChildBtn.style.display = "none"
-  searchForestBtn.style.display = "none"
-  explorePubBtn.style.display = "none"
-  searchDesertBtn.style.display = "none"
-  returnToPubBtn.style.display = "block"
+  desertBoard.style.display = "none";
+  forestBoard.style.display = "none";
 
-  winnerDiv.hidden = false;
-  winnerDiv.createElement('h1')
-  h1.textContent = "YOU FOUND BABY YODA"
-  winnerDiv.appendChild(div)
-  // create and display paragraph ending for deliver asset
-  // create play game again button that calls playGame()
+  deliverAssetBtn.style.display = "none";
+  harborChildBtn.style.display = "none";
+  searchForestBtn.style.display = "none";
+  explorePubBtn.style.display = "none";
+  searchDesertBtn.style.display = "none";
+  winnerDiv.style.display = "none";
+
+  deliverAssetEnd.style.display = "block";
+  returnToPubBtn.style.display = "block";
+
+  let assetStory = document.createElement('div');
+  assetStory.innerHTML = "This is the story of delivering the asset";
+  deliverAssetEnd.appendChild(assetStory);
+
 }
 
 function harborChildEnding() {
