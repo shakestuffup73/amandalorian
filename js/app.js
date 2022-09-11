@@ -30,9 +30,10 @@ let forestPics = [
 
 
 
-// VARIABLES //
+// VARIABLES aka STATE //
 
 let winner
+let randomSqIdx = Math.floor(Math.random() * 36);
 
 
 // CACHED ELEMENT REFERENCES //
@@ -45,6 +46,7 @@ const forestBoard = document.getElementById("forestBoard")
 const squareEls = document.querySelectorAll('.square')
 const pubMediaDiv = document.getElementById('pubMedia')
 const desertTimer = document.getElementById('desertTimer')
+const winningMessageDiv = document.getElementById('winningMessage')
 
 // EVENT LISTENERS //
 
@@ -56,7 +58,10 @@ explorePubBtn.addEventListener('click', explorePub);
 returnToPubBtn.addEventListener('click', returnToPub);
 
 desertBoard.addEventListener('click', playDesertGame)
+desertBoard.addEventListener('click', desertTimer)
+desertBoard.addEventListener('click', desertWinner)
 forestBoard.addEventListener('click', playForestGame)
+
 
 deliverAssetBtn.addEventListener('click', deliverAssetEnding);
 harborChildBtn.addEventListener('click', harborChildEnding);
@@ -144,6 +149,21 @@ function renderDesertGame() {
   console.log('this is the', desertBoard)
 }
 
+let desertCountdown = setInterval(function () {
+  timeLeft -= 1;
+
+  desertTimer.textContent = timeLeft + ' seconds remaining'
+
+  if (timeLeft === 0) {
+    desertTimer.textContent = `You didn't find the asset! Head back to the pub and try again.`
+    desertBoard.style.display = "none"
+    clearInterval(desertCountdown);
+    desertBoard.style.display = "none"
+    timeLeft = 5;
+  }
+  console.log(timeLeft)
+}, 1000)
+
 function playDesertGame() {
   desertTimer.style.display = "block"
 
@@ -151,28 +171,20 @@ function playDesertGame() {
   messageDiv.textContent = ''
   desertTimer.appendChild(messageDiv)
 
-  let desertCountdown = setInterval(function () {
-    timeLeft -= 1;
-  
-    desertTimer.textContent = timeLeft + ' seconds remaining'
-  
-    if (timeLeft === 0) {
-      desertTimer.textContent = `You didn't find the asset! Head back to the pub and try again.`
-      desertBoard.style.display = "none"
-      clearInterval(desertCountdown);
-      timeLeft = 5;
-    }
-    console.log(timeLeft)
-  }, 1000)
+}
 
-  desertCountdown();
+function desertWinner(event) {
 
-  console.log('clicking the desert squares')
+  console.log(event.target.parentElement.id)
+
+  let sqIdx = parseInt(event.target.parentElement.id.replace('sq', ''))
   
-  // on click of each div square try to find Baby Yoda
-  // if randomized image is Baby Yoda, win
-  // on first click, timer starts
-  // at end of timer, game starts over & re-randomizes array you click
+  console.log('this is the index of the clicked div', sqIdx)
+
+  if (sqIdx === randomSqIdx) { 
+    desertTimer.textContent = "YOU FOUND BABY YODA!"
+  }
+  console.log('this is the winning div index', randomSqIdx)
 }
 
 function initForest() {
@@ -280,6 +292,11 @@ function harborChildEnding() {
   // create and display paragraph ending for deliver asset
   // create play game again button that calls playGame()
 }
+
+
+
+
+
 
 
 // 1. Create opening credits scene
