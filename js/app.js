@@ -61,9 +61,9 @@ searchDesertBtn.addEventListener('click', renderDesertGame);
 explorePubBtn.addEventListener('click', explorePub);
 returnToPubBtn.addEventListener('click', returnToPub);
 
-desertBoard.addEventListener('click', playDesertGame)
+searchDesertBtn.addEventListener('click', playDesertGame)
 desertBoard.addEventListener('click', desertWinner)
-forestBoard.addEventListener('click', playForestGame)
+searchForestBtn.addEventListener('click', playForestGame)
 forestBoard.addEventListener('click', forestWinner)
 
 
@@ -80,6 +80,9 @@ deliverAssetBtn.style.display = "none"
 harborChildBtn.style.display = "none"
 
 function handlePlayClick() {
+  forestBoard.style.display = "none";
+  desertBoard.style.display = "none";
+
   introEl.style.display = "none"
   titleEl.style.display = "none"
   playGameBtn.style.display = "none"
@@ -107,8 +110,8 @@ function explorePub() {
 
   desertTimer.textContent = ""
   desertTimer.style.display = "none"
-  forestBoard.style.display = "none";
-  desertBoard.style.display = "none";
+  forestBoard.style.display = "none"
+  desertBoard.style.display = "none"
 }
 
 function initDesert() {
@@ -181,7 +184,8 @@ function desertWinner(event) {
 
   if (sqIdx === randomSqIdx) {
     winnerDiv.hidden = false;
-    forestBoard.style.display = "none";
+    desertBoard.hidden = true;
+    forestBoard.hidden = true;
 
     let winGif = document.createElement('img')
     winGif.setAttribute('src', pubMedia[1])
@@ -239,65 +243,67 @@ function renderForestGame() {
 }
 
 function playForestGame() {
-  forestTimer.style.display = "block"
+
+  forestTimer.style.display = "block";
 
   let forestCountdown = setInterval(function () {
-    timeLeft -= 1;
+    
+    if (timeLeft > 0){
+      timeLeft -= 1;
+    }
 
     forestTimer.textContent = timeLeft + ' seconds remaining'
-
+  
     if (timeLeft === 0) {
-      forestTimer.textContent = `You didn't find the asset! Head back to the pub and try again.`
 
-      forestBoard.hidden = true;
+      forestTimer.textContent = `Time's up! You didn't find the asset! Head back to the pub and try again.`
 
+      forestBoard.style.display = "none";
+      
       clearInterval(forestCountdown);
+
+      return;
     }
   }, 1000)
-
-  console.log('clicking the forest squares')
 }
 
 function forestWinner(event) {
-
-  console.log(event.target.parentElement.id)
 
   let sqIdx = parseInt(event.target.parentElement.id.replace('sq', ''))
 
   console.log('this is the index of the clicked div', sqIdx)
 
   if (sqIdx === randomSqIdx) {
-    winnerDiv.hidden = false;
-    forestBoard.hidden = true;
+    desertBoard.style.display = "none";
+    forestBoard.style.display = "none";
+    winnerDiv.style.display = "block";
+    forestTimer.style.display = "none";
+    
+    winnerDiv.textContent = "You found Baby Yoda!"
 
-    let winGif = document.createElement('img')
-    winGif.setAttribute('src', pubMedia[1])
+    let winGif = document.createElement('img');
+    winGif.setAttribute('src', pubMedia[1]);
+    winnerDiv.appendChild(winGif);
 
-    winnerDiv.appendChild(winGif)
-    desertTimer.textContent = `YOU FOUND BABY YODA!`
-
-    deliverAssetBtn.style.display = "block"
-    harborChildBtn.style.display = "block"
+    deliverAssetBtn.style.display = "block";
+    harborChildBtn.style.display = "block";
   }
-  console.log('this is the winning div index', randomSqIdx)
-  forestWinner();
+  console.log('this is the winning div index ', randomSqIdx);
 }
 
 function returnToPub() {
-  winnerDiv.hidden = true;
-  forestTimer.style.display = ""
   desertTimer.textContent = ""
+  forestTimer.textContent = ""
+  forestBoard.style.display = "none"
+  desertBoard.style.display = "none"
+
   returnToPubBtn.style.display = "none"
+  deliverAssetBtn.style.display = "none"
+  harborChildBtn.style.display = "none"
+  
   explorePubBtn.style.display = "block"
   searchForestBtn.style.display = "block"
   searchDesertBtn.style.display = "block"
-  deliverAssetBtn.style.display = "none"
-  harborChildBtn.style.display = "none"
-
-  desertBoard.style.display = "none"
-  desertBoard.innerHTML = ""
-  forestBoard.style.display = "none"
-  forestBoard.innerHTML = ""
 }
 
 function deliverAssetEnding() {
@@ -310,10 +316,9 @@ function deliverAssetEnding() {
   searchDesertBtn.style.display = "none"
   returnToPubBtn.style.display = "block"
 
-  winnerDiv.display = true;
-  document.createElement('div')
-  div.createElement('h1')
-  h1.innerHTML = "YOU FOUND BABY YODA"
+  winnerDiv.hidden = false;
+  winnerDiv.createElement('h1')
+  h1.textContent = "YOU FOUND BABY YODA"
   winnerDiv.appendChild(div)
   // create and display paragraph ending for deliver asset
   // create play game again button that calls playGame()
