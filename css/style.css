@@ -1,8 +1,8 @@
 body {
   background-color: black;
-  background-image: url('/media/background/MandoBabyYoda.jpg');
+  background-image: url('/media/background/MandoStarWars.jpg');
   background-repeat: no-repeat;
-  background-size: 1600px 1200px;
+  background-size: 1200px 1800px;
   background-position: top;
 }
 
@@ -67,10 +67,11 @@ main {
   color: #E3F2FD;
   border: 3px solid;
   text-shadow: .5px .5px #9C3848;
-  box-shadow: 0px 1px 16px 1px #AAbd8c, 0px 1px 16px 1px #AAbd8c;
+  box-shadow: 0px 1px 16px 1px #9C3848, 0px 1px 16px 1px #9C3848;
 }
 
-#desertTimer, #forestTimer {
+#desertTimer,
+#forestTimer {
   display: flex;
   font-family: video-cond, serif;
   font-weight: 700;

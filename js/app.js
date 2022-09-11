@@ -2,7 +2,7 @@
 
 // let desertGame, forestGame
 
-let timeLeft = 15;
+let timeLeft = 10;
 
 let pubMedia = [
   './media/gifs/disintegratejawa.gif',
@@ -87,7 +87,7 @@ resetGameBtn.style.display = "none"
 function handlePlayClick() {
   forestBoard.style.display = "none";
   desertBoard.style.display = "none";
-  forestTimer.style.display ="none";
+  forestTimer.style.display = "none";
   desertTimer.style.display = "none";
 
   introEl.style.display = "none"
@@ -152,26 +152,26 @@ function renderDesertGame() {
 }
 
 function playDesertGame() {
+  let timeLeft = 10;
+
   desertTimer.style.display = "block";
 
   let desertCountdown = setInterval(function () {
-    
-    if (timeLeft > 0){
+
+    if (timeLeft > 0) {
       timeLeft -= 1;
     }
 
     desertTimer.textContent = timeLeft + ' seconds remaining'
-  
+
     if (timeLeft === 0) {
 
       desertTimer.textContent = `Time's up! You didn't find the asset! Head back to the pub and try again.`
 
       desertBoard.style.display = "none";
       returnToPubDiv.style.display = "none";
-      
-      clearInterval(desertCountdown);
 
-      return;
+      clearInterval(desertCountdown);
     }
   }, 1000)
 }
@@ -230,27 +230,25 @@ function renderForestGame() {
 }
 
 function playForestGame() {
-
+  let timeLeft = 10;
   forestTimer.style.display = "block";
 
   let forestCountdown = setInterval(function () {
-    
-    if (timeLeft > 0){
+
+    if (timeLeft > 0) {
       timeLeft -= 1;
     }
 
     forestTimer.textContent = timeLeft + ' seconds remaining'
-  
+
     if (timeLeft === 0) {
 
       forestTimer.textContent = `Time's up! You didn't find the asset! Head back to the pub and try again.`
 
       forestBoard.style.display = "none";
       returnToPubDiv.style.display = "none";
-      
-      clearInterval(forestCountdown);
 
-      return;
+      clearInterval(forestCountdown);
     }
   }, 1000)
 }
@@ -292,7 +290,7 @@ function returnToPub() {
   deliverAssetBtn.style.display = "none"
   harborChildBtn.style.display = "none"
   deliverAssetEnd.style.display = "none"
-  
+
   explorePubBtn.style.display = "block"
   searchForestBtn.style.display = "block"
   searchDesertBtn.style.display = "block"
