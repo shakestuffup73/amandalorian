@@ -54,6 +54,7 @@ explorePubBtn.addEventListener('click', explorePub);
 returnToPubBtn.addEventListener('click', returnToPub);
 
 desertBoard.addEventListener('click', playDesertGame)
+forestBoard.addEventListener('click', playForestGame)
 
 deliverAssetBtn.addEventListener('click', deliverAssetEnding);
 harborChildBtn.addEventListener('click', harborChildEnding);
@@ -217,7 +218,66 @@ function renderForestGame() {
   console.log('this is the', forestBoard)
 }
 
+function renderDesertGame() {
+  pubMediaDiv.style.display = "none";
+  forestBoard.style.display = "none";
+  desertBoard.style.display = "grid"
 
+  console.log('this is the desert game');
+
+  searchForestBtn.style.display = "none";
+  explorePubBtn.style.display = "none";
+  searchDesertBtn.style.display = "none";
+  returnToPubBtn.style.display = "block";
+
+  let count = 0;
+  for (i = 0; i < 36; i++) {
+
+    let div = document.createElement('div');
+    div.className = "square";
+    div.id = `sq${count}`;
+    let desertImg = document.createElement('img')
+    let randomDesertPic = desertPics[Math.floor(Math.random() * desertPics.length)]
+    desertImg.setAttribute('src', randomDesertPic)
+
+    div.appendChild(desertImg)
+    count++;
+    desertBoard.appendChild(div);
+  }
+  console.log('this is the', desertBoard)
+}
+
+
+function playForestGame() {
+  forestTimer.style.display = "block"
+
+  let messageDiv = document.createElement('div')
+  messageDiv.textContent = ''
+  forestTimer.appendChild(messageDiv)
+
+  let forestCountdown = setInterval(function () {
+    timeLeft -= 1;
+  
+    forestTimer.textContent = timeLeft + ' seconds remaining'
+  
+    if (timeLeft === 0) {
+      forestTimer.textContent = `You didn't find the asset! Head back to the pub and try again.`
+      forestBoard.style.display = "none"
+      clearInterval(forestCountdown);
+      timeLeft = 5;
+    }
+    console.log(timeLeft)
+  }, 1000)
+
+  forestCountdown();
+
+  console.log('clicking the forest squares')
+  
+  // on click of each div square try to find Baby Yoda
+  // if randomized image is Baby Yoda, win
+  // on first click, timer starts
+  // at end of timer, game starts over & re-randomizes array you click
+}
 
 
 
@@ -236,6 +296,7 @@ function renderForestGame() {
 
 
 function returnToPub() {
+  forestTimer.style.display = ""
   desertTimer.textContent = ""
   pubMediaDiv.style.display = "none";
   returnToPubBtn.style.display = "none"
@@ -247,16 +308,6 @@ function returnToPub() {
   desertBoard.innerHTML = ""
   forestBoard.style.display = "none"
   forestBoard.innerHTML = ""
-}
-
-function desertGameTimer() {
-  // begin timer
-  // stop game at timer end
-}
-
-function forestGameTimer() {
-  // begin timer
-  // stop game at timer end - options back to pub or reset game
 }
 
 function deliverAssetEnding() {
