@@ -331,7 +331,7 @@ function deliverAssetEnding() {
   returnToPubBtn.style.display = "block";
 
   let assetStory = document.createElement('div');
-  assetStory.innerHTML = "This is the story of delivering the asset";
+  assetStory.innerHTML = `You'll live with this guilt for the rest of your child-free existence...Or not, you might just enjoy that disposable income from that rewarding career in bounty hunting and live a life of uninhibited adventure. You collect on your bounty and never think about The Child again. The End.`;
   deliverAssetEnd.appendChild(assetStory);
 
 }

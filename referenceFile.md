@@ -268,3 +268,4 @@
 STYLING CREDIT:
 
 Css shine-animation linear gradient: stack overflow
+Adobe Fonts 
