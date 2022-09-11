@@ -1,18 +1,31 @@
 // CONSTANTS //
 
-let desertGame, forestGame
+// let desertGame, forestGame
 
-let explorePubMedia = [
+let timeLeft = 5;
+
+let pubMedia = [
+  './media/gifs/disintegratejawas.gif',
 ]
 
 let desertPics = [
-  './media/jawa.jpg',
-  './media/jawa.jpg',
-  './media/jawa.jpg',
-  './media/rhino.jpg',
-  './media/rhino.jpg',
-  './media/rhino.jpg',
-  './media/rhino.jpg'
+  './media/desertpics/jawa.jpg',
+  './media/desertpics/rhino.jpg',
+  './media/desertpics/MandoJawas.jpg',
+  './media/desertpics/jawas.jpg',
+  './media/desertpics/blurrgs.jpg',
+  './media/desertpics/jawaship.jpg',
+  './media/desertpics/spoken.jpg',
+  './media/desertpics/blurrgs2.jpg',
+  './media/desertpics/mandoship.jpg',
+]
+
+let forestPics = [
+  './media/forestpics/forest1.jpg',
+  './media/forestpics/forest2.jpg',
+  './media/forestpics/forest3.jpg',
+  './media/forestpics/forest4.jpg',
+  './media/forestpics/forest5.jpg',
 ]
 
 // VARIABLES //
@@ -28,6 +41,8 @@ const titleEl = document.getElementById('title')
 const desertBoard = document.getElementById("desertBoard")
 const forestBoard = document.getElementById("forestBoard")
 const squareEls = document.querySelectorAll('.square')
+const pubMediaDiv = document.getElementById('pubMedia')
+const desertTimer = document.getElementById('desertTimer')
 
 // EVENT LISTENERS //
 
@@ -66,6 +81,21 @@ function handlePlayClick() {
 }
 
 function explorePub() {
+  desertTimer.textContent = ""
+  desertTimer.style.display = "none"
+  forestBoard.style.display = "none";
+  desertBoard.style.display = "none";
+
+  let div = document.createElement('div')
+  let pubGif = document.createElement('img')
+  let randomPubMedia = pubMedia[Math.floor(Math.random() * pubMedia.length)]
+
+  pubGif.setAttribute('src', randomPubMedia)
+  div.appendChild(pubGif)
+
+  pubMediaDiv.appendChild(div)
+
+  console.log('this is the pubmedia', pubMedia)
   // each pub button displays different media/graphic (short videos) on click
 }
 
@@ -84,6 +114,7 @@ function initDesert() {
 }
 
 function renderDesertGame() {
+  pubMediaDiv.style.display = "none";
   forestBoard.style.display = "none";
   desertBoard.style.display = "grid"
 
@@ -95,34 +126,53 @@ function renderDesertGame() {
   returnToPubBtn.style.display = "block";
 
   let count = 0;
-  for (i = 0; i < 6; i++) {
-    for (let j = 0; j < 6; j++) {
-      let div = document.createElement('div');
-      div.className = "square";
-      div.id = `sq${count}`;
-      let desertImg = document.createElement('img')
-      let randomDesertPic = desertPics[Math.floor(Math.random() * desertPics.length)]
-      desertImg.setAttribute('src', randomDesertPic)
+  for (i = 0; i < 36; i++) {
 
-      div.appendChild(desertImg)
-      count++;
-      desertBoard.appendChild(div);
-    }
+    let div = document.createElement('div');
+    div.className = "square";
+    div.id = `sq${count}`;
+    let desertImg = document.createElement('img')
+    let randomDesertPic = desertPics[Math.floor(Math.random() * desertPics.length)]
+    desertImg.setAttribute('src', randomDesertPic)
+
+    div.appendChild(desertImg)
+    count++;
+    desertBoard.appendChild(div);
   }
   console.log('this is the', desertBoard)
 }
 
 
 function playDesertGame() {
+  desertTimer.style.display = "block"
+
+  let messageDiv = document.createElement('div')
+  messageDiv.textContent = ''
+  desertTimer.appendChild(messageDiv)
+
+  let desertCountdown = setInterval(function () {
+    timeLeft -= 1;
+  
+    desertTimer.textContent = timeLeft + ' seconds remaining'
+  
+    if (timeLeft === 0) {
+      desertTimer.textContent = `You didn't find the asset! Head back to the pub and try again.`
+      desertBoard.style.display = "none"
+      clearInterval(desertCountdown);
+      timeLeft = 5;
+    }
+    console.log(timeLeft)
+  }, 1000)
+
+  desertCountdown();
+
   console.log('clicking the desert squares')
-  // on click of each div square, flip over image to reveal image from randomized array
-  // if randomized array image is Baby Yoda, win
+  
+  // on click of each div square try to find Baby Yoda
+  // if randomized image is Baby Yoda, win
   // on first click, timer starts
   // at end of timer, game starts over & re-randomizes array you click
-
 }
-
-
 
 function initForest() {
   forestBoard = [
@@ -140,6 +190,7 @@ function initForest() {
 
 
 function renderForestGame() {
+  pubMediaDiv.style.display = "none";
   desertBoard.style.display = "none";
   forestBoard.style.display = "grid";
 
@@ -149,14 +200,19 @@ function renderForestGame() {
   returnToPubBtn.style.display = "block";
 
   let count = 0;
-  for (i = 0; i < 6; i++) {
-    for (let j = 0; j < 6; j++) {
-      let div = document.createElement('div');
-      div.className = "square";
-      div.id = `sq${count}`;
-      count++
-      forestBoard.appendChild(div);
-    }
+  for (i = 0; i < 36; i++) {
+
+    let div = document.createElement('div');
+    div.className = "square";
+    div.id = `sq${count}`;
+    let forestImg = document.createElement('img')
+    let randomForestPic = forestPics[Math.floor(Math.random() * forestPics.length)]
+    forestImg.setAttribute('src', randomForestPic)
+
+    div.appendChild(forestImg);
+    count++
+    forestBoard.appendChild(div);
+
   }
   console.log('this is the', forestBoard)
 }
@@ -180,6 +236,8 @@ function renderForestGame() {
 
 
 function returnToPub() {
+  desertTimer.textContent = ""
+  pubMediaDiv.style.display = "none";
   returnToPubBtn.style.display = "none"
   explorePubBtn.style.display = "block"
   searchForestBtn.style.display = "block"
