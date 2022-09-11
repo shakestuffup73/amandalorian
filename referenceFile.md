@@ -263,3 +263,8 @@
 
     Embed: <div class="tenor-gif-embed" data-postid="15921407" data-share-method="host" data-aspect-ratio="2.11921" data-width="100%"><a href="https://tenor.com/view/the-mandalorian-baby-yoda-baby-yoda-happy-happy-driving-fast-gif-15921407">The Mandalorian Baby Yoda GIF</a>from <a href="https://tenor.com/search/the+mandalorian-gifs">The Mandalorian GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
+
+
+STYLING CREDIT:
+
+Css shine-animation linear gradient: stack overflow

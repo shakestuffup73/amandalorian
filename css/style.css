@@ -1,7 +1,76 @@
+body {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  background-color: black;
+  background-image: url('/media/background/MandoBabyYoda.jpg');
+  background-repeat: no-repeat;
+  background-size: 1600px 1200px;
+  background-position: top;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#intro {
+  display: flex;
+  font-family: video-cond, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  color: #E3F2FD;
+  text-shadow: 6px 6px black;
+}
+
+#titleDiv {
+  display: flex;
+  font-family: forgotten-futurist-shadow, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 80px;
+  color: #E3F2FD
+}
 
 #title {
-  background-color: black;
-  color: white
+  text-align: center;
+  color: #E3F2FD;
+  text-shadow: 6px 6px black;
+}
+
+#playGameBtn {
+  display: flex;
+  font-family: video-cond, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 80px;
+  border-radius: 5%;
+  padding: 4px 4px 4px 4px;
+  margin: 4px 4px 4px 4px;
+  color: #E3F2FD;
+  border: 3px solid;
+  background: linear-gradient(to right, #FFF 20%, #9C3848 40%, #9C3848 60%, #FFF 80%);
+  background-size: 200% auto;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+#playGameBtn:hover {
+  color: #E3F2FD;
+  border: 3px solid;
+  text-shadow: .5px .5px #9C3848;
+  box-shadow: 0px 1px 16px 1px #AAbd8c, 0px 1px 16px 1px #AAbd8c;
 }
 
 #desertBoard {
