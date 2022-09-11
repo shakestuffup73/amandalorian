@@ -158,46 +158,51 @@ function renderDesertGame() {
 }
 
 function playDesertGame() {
-  desertTimer.style.display = "block"
+  desertTimer.style.display = "block";
 
   let desertCountdown = setInterval(function () {
-    timeLeft -= 1;
+    
+    if (timeLeft > 0){
+      timeLeft -= 1;
+    }
 
     desertTimer.textContent = timeLeft + ' seconds remaining'
-
+  
     if (timeLeft === 0) {
-      desertTimer.textContent = `You didn't find the asset! Head back to the pub and try again.`
-      desertBoard.style.display = "none"
-      desertBoard.style.display = "none"
+
+      desertTimer.textContent = `Time's up! You didn't find the asset! Head back to the pub and try again.`
+
+      desertBoard.style.display = "none";
+      
       clearInterval(desertCountdown);
+
+      return;
     }
   }, 1000)
 }
 
 function desertWinner(event) {
 
-  console.log(event.target.parentElement.id)
-
   let sqIdx = parseInt(event.target.parentElement.id.replace('sq', ''))
 
   console.log('this is the index of the clicked div', sqIdx)
 
   if (sqIdx === randomSqIdx) {
-    winnerDiv.hidden = false;
-    desertBoard.hidden = true;
-    forestBoard.hidden = true;
+    desertBoard.style.display = "none";
+    forestBoard.style.display = "none";
+    winnerDiv.style.display = "block";
+    desertTimer.style.display = "none";
 
-    let winGif = document.createElement('img')
-    winGif.setAttribute('src', pubMedia[1])
+    winnerDiv.textContent = "You found Baby Yoda!"
 
-    winnerDiv.appendChild(winGif)
-    desertTimer.textContent = `YOU FOUND BABY YODA!`
+    let winGif = document.createElement('img');
+    winGif.setAttribute('src', pubMedia[1]);
+    winnerDiv.appendChild(winGif);
 
-    deliverAssetBtn.style.display = "block"
-    harborChildBtn.style.display = "block"
+    deliverAssetBtn.style.display = "block";
+    harborChildBtn.style.display = "block";
   }
-  console.log('this is the winning div index', randomSqIdx)
-  desertWinner();
+  console.log('this is the winning div index ', randomSqIdx);
 }
 
 function initForest() {
@@ -278,7 +283,7 @@ function forestWinner(event) {
     forestBoard.style.display = "none";
     winnerDiv.style.display = "block";
     forestTimer.style.display = "none";
-    
+
     winnerDiv.textContent = "You found Baby Yoda!"
 
     let winGif = document.createElement('img');
@@ -294,6 +299,7 @@ function forestWinner(event) {
 function returnToPub() {
   desertTimer.textContent = ""
   forestTimer.textContent = ""
+  winnerDiv.style.display = "none"
   forestBoard.style.display = "none"
   desertBoard.style.display = "none"
 
