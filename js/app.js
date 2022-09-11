@@ -337,13 +337,22 @@ function deliverAssetEnding() {
 }
 
 function harborChildEnding() {
-  searchForestBtn.style.display = "none"
-  explorePubBtn.style.display = "none"
-  searchDesertBtn.style.display = "none"
-  returnToPubBtn.style.display = "block"
+  desertBoard.style.display = "none";
+  forestBoard.style.display = "none";
 
-  // create and display paragraph ending for deliver asset
-  // create play game again button that calls playGame()
+  deliverAssetBtn.style.display = "none";
+  harborChildBtn.style.display = "none";
+  searchForestBtn.style.display = "none";
+  explorePubBtn.style.display = "none";
+  searchDesertBtn.style.display = "none";
+  winnerDiv.style.display = "none";
+
+  deliverAssetEnd.style.display = "block";
+  returnToPubBtn.style.display = "block";
+
+  let assetStory = document.createElement('div');
+  assetStory.innerHTML = "This is the story of harboring the child";
+  deliverAssetEnd.appendChild(assetStory);
 }
 
 
