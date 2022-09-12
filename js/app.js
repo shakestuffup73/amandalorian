@@ -14,7 +14,7 @@ let pubMedias = [
   './media/gifs/ihavespoken.gif',
   './media/gifs/entersdramatically.gif',
   './media/gifs/mandocoffee.gif',
-  
+
 
 ]
 
@@ -42,6 +42,7 @@ let winningGifs = [
   './media/gifs/babyyodawin.gif',
 ]
 
+const mandalorianSong = new Audio("../audio/mandalorian.mp3");
 
 // VARIABLES aka STATE //
 
@@ -93,6 +94,14 @@ harborChildBtn.style.display = "none"
 resetGameBtn.style.display = "none"
 forestTimer.style.display = "none"
 desertTimer.style.display = "none"
+
+mandalorianSong.play();
+
+if (typeof mandalorianSong.loop === 'boolean') {
+  mandalorianSong.loop = true;
+  mandalorianSong.volume = .1;
+  mandalorianSong.play();
+}
 
 function handlePlayClick() {
   forestBoard.style.display = "none";
@@ -332,6 +341,7 @@ function deliverAssetEnding() {
   deliverAssetEnd.style.display = "block";
   returnToPubBtn.style.display = "block";
 
+  deliverAssetEnd.innerHTML = "";
   let assetStory = document.createElement('div');
   assetStory.innerHTML = `You'll live with this guilt for the rest of your child-free existence...Or not, you might just enjoy that disposable income from that rewarding career in bounty hunting and live a life of uninhibited adventure. You collect on your bounty and never think about The Child again. The End.`;
   deliverAssetEnd.appendChild(assetStory);
@@ -352,6 +362,7 @@ function harborChildEnding() {
   deliverAssetEnd.style.display = "block";
   returnToPubBtn.style.display = "block";
 
+  deliverAssetEnd.innerHTML = "";
   let assetStory = document.createElement('div');
   assetStory.innerHTML = "Had you known your bounty mission was to recover a Child, you likely would not have accepted. While you do not dare call yourself a parent, you now are responsible for protecting The Child and bringing it somewhere safe. Probably time to consider trading the spaceship in for a minivan. The End.";
   deliverAssetEnd.appendChild(assetStory);
