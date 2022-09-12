@@ -6,7 +6,12 @@ let timeLeft = 10;
 
 let pubMedias = [
   './media/gifs/disintegratejawa.gif',
-  './media/gifs/babyyodawin.gif',
+  './media/gifs/babyyodawhiteclaw.gif',
+  './media/gifs/mandonewarmor.gif',
+  './media/gifs/flyinggrogu.gif',
+  './media/gifs/thisistheway.gif',
+  './media/gifs/happybabyyoda.gif',
+  './media/gifs/ihavespoken.gif',
 ]
 
 let desertPics = [
@@ -155,7 +160,7 @@ function renderDesertGame() {
 
 function playDesertGame() {
   let timeLeft = 10;
-  returnToPubDiv.innerHTML = ""
+  returnToPubDiv.innerHTML = "Click each grid square to try and find The Asset! But hurry, you have only 10 seconds to complete your mission!"
   returnToPubBtn.style.display = "none";
   desertTimer.style.display = "block";
 
@@ -193,10 +198,11 @@ function desertWinner(event) {
     desertTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
 
-    winnerDiv.textContent = "You found Baby Yoda!"
+    winnerDiv.textContent = "You found The Asset, and it appears to be a Child!"
+    returnToPubDiv.innerHTML = "Now you must choose what to do with it!"
 
     let winGif = document.createElement('img');
-    winGif.setAttribute('src', winningGifs[1]);
+    winGif.setAttribute('src', winningGifs[0]);
     winnerDiv.appendChild(winGif);
 
     returnToPubBtn.style.display = "none";
@@ -238,7 +244,7 @@ function playForestGame() {
   let timeLeft = 10;
   forestTimer.style.display = "block";
   returnToPubBtn.style.display = "none"
-  returnToPubDiv.innerHTML = ""
+  returnToPubDiv.innerHTML = "Click each grid square to try and find The Asset! But hurry, you have only 10 seconds to complete your mission!"
 
   let forestCountdown = setInterval(function () {
 
@@ -274,10 +280,11 @@ function forestWinner(event) {
     forestTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
 
-    winnerDiv.textContent = "You found Baby Yoda!"
+    winnerDiv.textContent = "You found The Asset, and it appears to be a Child!"
+    returnToPubDiv.innerHTML = "Now you must choose what to do with it!"
 
     let winGif = document.createElement('img');
-    winGif.setAttribute('src', winningGifs[1]);
+    winGif.setAttribute('src', winningGifs[0]);
     winnerDiv.appendChild(winGif);
 
     returnToPubBtn.style.display = "none";
