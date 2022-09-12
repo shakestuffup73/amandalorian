@@ -109,6 +109,7 @@ function firstPubGif() {
 }
 
 function explorePub() {
+  returnToPubDiv.innerHTML = ""
   returnToPubDiv.hidden = true;
   winnerDiv.hidden = true;
   pubMediaDiv.innerHTML = ""
@@ -153,7 +154,7 @@ function renderDesertGame() {
 
 function playDesertGame() {
   let timeLeft = 10;
-
+  returnToPubDiv.innerHTML = ""
   desertTimer.style.display = "block";
 
   let desertCountdown = setInterval(function () {
@@ -232,6 +233,7 @@ function renderForestGame() {
 function playForestGame() {
   let timeLeft = 10;
   forestTimer.style.display = "block";
+  returnToPubDiv.innerHTML = ""
 
   let forestCountdown = setInterval(function () {
 
