@@ -17,6 +17,9 @@ LINK TO PLAY GAME HERE:
 
 ![Game Screenshot](./media/ScreenShot.png)
 <br>
+![Game Screenshot](./media/ScreenShot2.png)
+<br>
+![Game Screenshot](media/ScreenShot3.png)
 <br>
 <h3> Technologies Used</h3>
 <ul>
