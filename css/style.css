@@ -263,22 +263,6 @@ div {
 
 
 @media only screen and (min-width: 768px) {
-  #explorePubDiv>img {
-    margin: 30px;
-    color: #E3F2FD;
-    border: 3px solid;
-    width: 200%;
-    height: 200%;
-  }
-
-  #pubMedia>img {
-    display: flex;
-    margin: 30px;
-    width: 125%;
-    height: 125%;
-    color: #E3F2FD;
-    border: 3px solid;
-  }
 
   #forestBoard>div {
     transform: scale(1.25, 1.25)

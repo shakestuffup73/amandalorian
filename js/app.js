@@ -12,6 +12,10 @@ let pubMedias = [
   './media/gifs/thisistheway.gif',
   './media/gifs/happybabyyoda.gif',
   './media/gifs/ihavespoken.gif',
+  './media/gifs/entersdramatically.gif',
+  './media/gifs/mandocoffee.gif',
+  
+
 ]
 
 let desertPics = [
