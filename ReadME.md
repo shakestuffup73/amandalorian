@@ -11,7 +11,7 @@ GETTING STARTED:
 <br>
 LINK TO PLAY GAME HERE:
 <br>
-<a> https://amandalorian.netlify.app/ </a>
+<a href="https://amandalorian.netlify.app/">AMANDALORIAN</a>
 <br>
 <br>
 
@@ -33,6 +33,7 @@ LINK TO PLAY GAME HERE:
 <ul>
 <li>More CSS styling and animation (incorporate more ideas from pseudo-code)</li>
 <li>Initial landing page with scrolling introduction</li>
+<li>Improve mobile device usability and display</li>
 <li>On grid clicks, change image to Jawa or Stormtrooper helmet if they are a "miss"</li>
 <li>Sound effects for each grid click</li>
 <li>Video incorporation</li>
