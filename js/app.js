@@ -4,7 +4,7 @@
 
 let timeLeft = 10;
 
-let pubMedia = [
+let pubMedias = [
   './media/gifs/disintegratejawa.gif',
   './media/gifs/babyyodawin.gif',
 ]
@@ -29,7 +29,7 @@ let forestPics = [
   './media/forestpics/forest5.jpg',
 ]
 
-let winningGif = [
+let winningGifs = [
   './media/gifs/babyyodawin.gif',
 ]
 
@@ -82,7 +82,8 @@ returnToPubBtn.style.display = "none"
 deliverAssetBtn.style.display = "none"
 harborChildBtn.style.display = "none"
 resetGameBtn.style.display = "none"
-
+forestTimer.style.display = "none"
+desertTimer.style.display = "none"
 
 function handlePlayClick() {
   forestBoard.style.display = "none";
@@ -102,7 +103,7 @@ function handlePlayClick() {
 
 function firstPubGif() {
   let pubGif = document.createElement('img')
-  let randomPubMedia = pubMedia[Math.floor(Math.random() * pubMedia.length)]
+  let randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
   pubGif.setAttribute('src', randomPubMedia)
 
   pubMediaDiv.appendChild(pubGif)
@@ -155,6 +156,7 @@ function renderDesertGame() {
 function playDesertGame() {
   let timeLeft = 10;
   returnToPubDiv.innerHTML = ""
+  returnToPubBtn.style.display = "none";
   desertTimer.style.display = "block";
 
   let desertCountdown = setInterval(function () {
@@ -171,6 +173,7 @@ function playDesertGame() {
 
       desertBoard.style.display = "none";
       returnToPubDiv.style.display = "none";
+      returnToPubBtn.style.display = "block";
 
       clearInterval(desertCountdown);
     }
@@ -193,9 +196,10 @@ function desertWinner(event) {
     winnerDiv.textContent = "You found Baby Yoda!"
 
     let winGif = document.createElement('img');
-    winGif.setAttribute('src', pubMedia[1]);
+    winGif.setAttribute('src', winningGifs[1]);
     winnerDiv.appendChild(winGif);
 
+    returnToPubBtn.style.display = "none";
     deliverAssetBtn.style.display = "block";
     harborChildBtn.style.display = "block";
   }
@@ -233,6 +237,7 @@ function renderForestGame() {
 function playForestGame() {
   let timeLeft = 10;
   forestTimer.style.display = "block";
+  returnToPubBtn.style.display = "none"
   returnToPubDiv.innerHTML = ""
 
   let forestCountdown = setInterval(function () {
@@ -249,6 +254,7 @@ function playForestGame() {
 
       forestBoard.style.display = "none";
       returnToPubDiv.style.display = "none";
+      returnToPubBtn.style.display = "block"
 
       clearInterval(forestCountdown);
     }
@@ -271,9 +277,10 @@ function forestWinner(event) {
     winnerDiv.textContent = "You found Baby Yoda!"
 
     let winGif = document.createElement('img');
-    winGif.setAttribute('src', pubMedia[1]);
+    winGif.setAttribute('src', winningGifs[1]);
     winnerDiv.appendChild(winGif);
 
+    returnToPubBtn.style.display = "none";
     deliverAssetBtn.style.display = "block";
     harborChildBtn.style.display = "block";
   }
@@ -297,7 +304,7 @@ function returnToPub() {
   searchForestBtn.style.display = "block"
   searchDesertBtn.style.display = "block"
 
-  returnToPubDiv.innerHTML = `Welcome back to the pub! All is not lost. Take a minute to explore before setting out on your journey again. You will find The Asset - Mandalorians never fail.`;
+  returnToPubDiv.innerHTML = `Welcome back to the pub! Take a minute to explore before setting out on your journey...`;
 }
 
 function deliverAssetEnding() {
@@ -335,7 +342,7 @@ function harborChildEnding() {
   returnToPubBtn.style.display = "block";
 
   let assetStory = document.createElement('div');
-  assetStory.innerHTML = "This is the story of harboring the child";
+  assetStory.innerHTML = "Had you known your bounty mission was to recover a Child, you likely would not have accepted. While you do not dare call yourself a parent, you now are responsible for protecting The Child and bringing it somewhere safe. Probably time to consider trading the spaceship in for a minivan. The End.";
   deliverAssetEnd.appendChild(assetStory);
 }
 
