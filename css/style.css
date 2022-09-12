@@ -50,7 +50,27 @@ div {
   transform: scale(0.7, .7)
 }
 
-#intro,
+#winDiv>img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  color: #E3F2FD;
+  border: 3px solid;
+}
+
+#intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: video-cond, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: #E3F2FD;
+  text-shadow: 6px 6px black;
+}
+
 #winDiv,
 #deliverAssetEnd,
 #harborChildEnd {
@@ -63,6 +83,7 @@ div {
   font-size: 20px;
   color: #E3F2FD;
   text-shadow: 6px 6px black;
+  background-color: #9C3848;
 }
 
 #winMessage {
@@ -75,6 +96,7 @@ div {
   font-size: 20px;
   color: #E3F2FD;
   text-shadow: 6px 6px black;
+  background-color: #9C3848;
 }
 
 #titleDiv {
@@ -139,6 +161,7 @@ div {
   margin: 20px;
   color: #E3F2FD;
   text-shadow: 6px 6px black;
+  background-color: #9C3848;
 }
 
 #returnToPubDiv {
@@ -151,6 +174,7 @@ div {
   font-size: 20px;
   color: #E3F2FD;
   text-shadow: 2px 2px black;
+  background-color: #9C3848;
 }
 
 #desertBoard {
