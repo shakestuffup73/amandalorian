@@ -14,8 +14,6 @@ let pubMedias = [
   './media/gifs/ihavespoken.gif',
   './media/gifs/entersdramatically.gif',
   './media/gifs/mandocoffee.gif',
-
-
 ]
 
 let desertPics = [
