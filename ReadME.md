@@ -9,7 +9,9 @@ Amandalorian is the story of a bounty hunter, who the user plays as. Starting sc
 GETTING STARTED:
 <br>
 <br>
-// LINK TO GAME HERE //
+LINK TO GAME HERE
+<br>
+<a>https://amandalorian.netlify.app/</a>
 <br>
 <br>
 
