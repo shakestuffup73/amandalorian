@@ -2,7 +2,7 @@
 
 // let desertGame, forestGame
 
-let timeLeft = 100;
+let timeLeft = 10;
 
 let pubMedias = [
   './media/gifs/disintegratejawa.gif',
@@ -112,7 +112,7 @@ function handlePlayClick() {
   titleEl.style.display = "none"
   playGameBtn.style.display = "none"
   returnToPubBtn.style.display = "none"
-  
+
   introEl.style.display = "block"
   explorePubBtn.style.display = "block"
   searchForestBtn.style.display = "block"
@@ -174,9 +174,10 @@ function renderDesertGame() {
 }
 
 function playDesertGame() {
-  let timeLeft = 100;
+  let timeLeft = 10;
+
   introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
-  desertTimer.textContent = ""
+
   returnToPubBtn.style.display = "none";
   desertTimer.style.display = "block";
 
@@ -190,7 +191,8 @@ function playDesertGame() {
 
     if (timeLeft === 0) {
 
-      desertTimer.textContent = `Time's up! You didn't find the asset! Head back to the pub and try again.`
+      introEl.textContent = ""
+      desertTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Forest of Assembly?"
 
       desertBoard.style.display = "none";
       returnToPubDiv.style.display = "none";
@@ -211,8 +213,12 @@ function desertWinner(event) {
     desertBoard.style.display = "none";
     forestBoard.style.display = "none";
     winnerDiv.style.display = "block";
+    forestTimer.style.display = "none";
     desertTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
+    
+    deliverAssetBtn.style.display = "block";
+    harborChildBtn.style.display = "block";
 
     introEl.textContent = "You found The Asset in the Desert of Assembly, and it appears to be a Child!"
     winnerDiv.textContent = "Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?"
@@ -220,10 +226,6 @@ function desertWinner(event) {
     let winGif = document.createElement('img');
     winGif.setAttribute('src', winningGifs[0]);
     winnerDiv.appendChild(winGif);
-
-    returnToPubBtn.style.display = "none";
-    deliverAssetBtn.style.display = "block";
-    harborChildBtn.style.display = "block";
   }
   console.log('this is the winning div index ', randomSqIdx);
 }
@@ -257,10 +259,12 @@ function renderForestGame() {
 }
 
 function playForestGame() {
-  let timeLeft = 100;
-  forestTimer.style.display = "block";
-  returnToPubBtn.style.display = "none"
+  let timeLeft = 10;
+
   introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
+
+  returnToPubBtn.style.display = "none";
+  forestTimer.style.display = "block";
 
   let forestCountdown = setInterval(function () {
 
@@ -272,11 +276,12 @@ function playForestGame() {
 
     if (timeLeft === 0) {
 
-      forestTimer.textContent = `Time's up! You didn't find the asset! Head back to the pub and try again.`
+      introEl.textContent = ""
+      forestTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Desert of Assembly?"
 
       forestBoard.style.display = "none";
       returnToPubDiv.style.display = "none";
-      returnToPubBtn.style.display = "block"
+      returnToPubBtn.style.display = "block";
 
       clearInterval(forestCountdown);
     }
@@ -295,6 +300,9 @@ function forestWinner(event) {
     winnerDiv.style.display = "block";
     forestTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
+    
+    deliverAssetBtn.style.display = "block";
+    harborChildBtn.style.display = "block";
 
     introEl.textContent = "You found The Asset in the Forest of Assembly, and it appears to be a Child!"
     winnerDiv.textContent = "Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?"
@@ -302,15 +310,12 @@ function forestWinner(event) {
     let winGif = document.createElement('img');
     winGif.setAttribute('src', winningGifs[0]);
     winnerDiv.appendChild(winGif);
-
-    returnToPubBtn.style.display = "none";
-    deliverAssetBtn.style.display = "block";
-    harborChildBtn.style.display = "block";
   }
   console.log('this is the winning div index ', randomSqIdx);
 }
 
 function returnToPub() {
+  introEl.textContent = 'Welcome back to the Pub, Mando. Before you set out on your next bounty hunt, take a minute to explore.'
   returnToPubDiv.style.display = "block"
   desertTimer.textContent = ""
   forestTimer.textContent = ""
@@ -326,8 +331,6 @@ function returnToPub() {
   explorePubBtn.style.display = "block"
   searchForestBtn.style.display = "block"
   searchDesertBtn.style.display = "block"
-
-  returnToPubDiv.innerHTML = `Welcome back to the pub! Take a minute to explore before setting out on your journey...`;
 }
 
 function deliverAssetEnding() {
@@ -345,10 +348,10 @@ function deliverAssetEnding() {
   returnToPubBtn.style.display = "block";
 
   deliverAssetEnd.innerHTML = "";
+  introEl.textContent = "You decided to deliver The Asset to your client and collect on your bounty."
   let assetStory = document.createElement('div');
-  assetStory.innerHTML = `You'll live with this guilt for the rest of your child-free existence...Or not, you might just enjoy that disposable income from that rewarding career in bounty hunting and live a life of uninhibited adventure. You collect on your bounty and never think about The Child again. The End.`;
+  assetStory.innerHTML = `You'll live with this guilt for the rest of your child-free existence. Or not, you might just enjoy that disposable income from that rewarding career in bounty hunting and live a life of uninhibited adventure. You collect on your bounty and never think about The Child again. Great work, Mando. Go forth and find other bounties to hunt and collect upon. The End...for now.`;
   deliverAssetEnd.appendChild(assetStory);
-
 }
 
 function harborChildEnding() {
@@ -366,8 +369,9 @@ function harborChildEnding() {
   returnToPubBtn.style.display = "block";
 
   deliverAssetEnd.innerHTML = "";
+  introEl.textContent = "You decided to harbor The Child and become a fugitive. Your client will be very, very angry. And it is highly likely that the old Imperial Army will send Stormtroopers after you to find this valuable Asset they so badly want."
   let assetStory = document.createElement('div');
-  assetStory.innerHTML = "Had you known your bounty mission was to recover a Child, you likely would not have accepted. While you do not dare call yourself a parent, you now are responsible for protecting The Child and bringing it somewhere safe. Probably time to consider trading the spaceship in for a minivan. The End.";
+  assetStory.innerHTML = "Had you known your bounty mission was to recover a Child, you likely would not have accepted. While you do not dare call yourself a parent, you now are responsible for protecting The Child and bringing it somewhere safe. Probably time to consider trading the spaceship in for a minivan. Go forth and find the rightful place for this Child of unknown species. Be safe on your journey. The End...for now.";
   deliverAssetEnd.appendChild(assetStory);
 }
 

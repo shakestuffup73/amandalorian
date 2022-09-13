@@ -15,20 +15,21 @@ main {
 }
 
 #explorePubDiv, #pubMedia, #winDiv {
+  text-align: center;
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 20px;
+  font-size: 10px;
+  padding: 10px;
+  margin: 10px;
+  color: #E3F2FD;
+  background-color: #9C3848;
+  text-shadow: 3px 3px black;
 }
 
 #explorePubDiv>img, #pubMedia>img, #winDiv>img {
-  margin: 30px;
   color: #E3F2FD;
   border: 3px solid;
-}
-
-#desertBoard>div>img, #forestBoard>div>img {
-  transform: scale(0.5)
 }
 
 #intro {
@@ -45,10 +46,11 @@ main {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 20px;
-  padding: 5px;
+  font-size: 40px;
+  padding: 10px;
   color: #E3F2FD;
   text-shadow: 3px 3px black;
+  background-color: #9C3848;
 }
 
 #forestTimer, #forestTimerDiv, #desertTimer, #desertTimerDiv, #winDiv, #winMessage, #returnToPubDiv {
@@ -151,9 +153,7 @@ main {
   align-items: center;
 }
 
-#searchForestBtn {
-  grid-column: 2;
-  grid-row: 2;
+#searchForestBtn, #searchDesertBtn {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
@@ -172,17 +172,6 @@ main {
 }
 
 #searchDesertBtn {
-  grid-column: 2;
-  grid-row: 2;
-  font-family: video-cond, serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 30px;
-  border-radius: 5%;
-  padding: 15px;
-  margin: 40px;
-  color: #E3F2FD;
-  border: 3px solid;
   background: linear-gradient(to right, #FFF 20%, #EF7B3B 40%, #EF7B3B 60%, #FFF 80%);
   background-size: 200% auto;
   text-fill-color: transparent;
@@ -192,30 +181,7 @@ main {
 }
 
 #explorePubBtn,
-#returnToPubBtn {
-  grid-column: 2;
-  grid-row: 2;
-  font-family: video-cond, serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 30px;
-  border-radius: 5%;
-  padding: 15px;
-  margin: 40px;
-  color: #E3F2FD;
-  border: 3px solid;
-  background: linear-gradient(to right, #FFF 20%, #9C3848 40%, #9C3848 60%, #FFF 80%);
-  background-size: 200% auto;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
-}
-
-#harborChildBtn,
-#deliverAssetBtn {
-  grid-column: 2;
-  grid-row: 2;
+#returnToPubBtn, #harborChildBtn, #deliverAssetBtn {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
@@ -243,20 +209,13 @@ main {
     margin: 100px 10px 10px 10px;
   }
 
-  #forestBoard>div {
-    transform: scale(1.25, 1.25)
-  }
-
-  #desertBoard>div {
-    transform: scale(1.25, 1.25)
-  }
-
   #intro,
   #winDiv,
   #deliverAssetEnd,
   #harborChildEnd,
   #winMessage {
     font-size: 40px;
+    margin: 60px;
   }
 
   #titleDiv {
@@ -286,17 +245,11 @@ main {
     font-size: 60px;
   }
 
-  #desertBoard {
+  #desertBoard, #forestBoard {
     display: grid;
-    grid-template-rows: repeat(6, 15vmin);
-    grid-template-columns: repeat(6, 15vmin);
-    grid-gap: 4vmin;
-  }
-
-  #forestBoard {
-    display: grid;
-    grid-template-rows: repeat(6, 15vmin);
-    grid-template-columns: repeat(6, 15vmin);
-    grid-gap: 4vmin;
+    grid-template-rows: repeat(6, 20vmin);
+    grid-template-columns: repeat(6, 20vmin);
+    row-gap: 20px;
+    column-gap: 20px;
   }
 }
