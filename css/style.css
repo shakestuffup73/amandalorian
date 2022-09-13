@@ -77,8 +77,10 @@ main {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 10px;
-  padding: 5px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 30px, 30px, 30px, 30px;
+  padding: 20px, 20px, 20px, 20px;
   color: #E3F2FD;
   background-color: #9C3848;
   text-shadow: 3px 3px black;

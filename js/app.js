@@ -224,6 +224,7 @@ function desertWinner(event) {
     forestTimer.style.display = "none";
     desertTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
+    introEl.style.display = "block"
 
     deliverAssetBtn.style.display = "block";
     harborChildBtn.style.display = "block";
@@ -313,21 +314,22 @@ function forestWinner(event) {
   console.log('this is the index of the clicked div', sqIdx)
 
   if (sqIdx === randomSqIdx) {
-    desertBoard.style.display = "none";
-    forestBoard.style.display = "none";
-    winnerDiv.style.display = "block";
-    forestTimer.style.display = "none";
-    returnToPubBtn.style.display = "none";
+    desertBoard.style.display = "none"
+    forestBoard.style.display = "none"
+    winnerDiv.style.display = "block"
+    forestTimer.style.display = "none"
+    returnToPubBtn.style.display = "none"
+    introEl.style.display = "block"
 
-    deliverAssetBtn.style.display = "block";
-    harborChildBtn.style.display = "block";
+    deliverAssetBtn.style.display = "block"
+    harborChildBtn.style.display = "block"
 
     introEl.textContent = "You found The Asset in the Forest of Assembly, and it appears to be a Child!"
     winnerDiv.textContent = "Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?"
 
-    let winGif = document.createElement('img');
-    winGif.setAttribute('src', winningGifs[0]);
-    winnerDiv.appendChild(winGif);
+    let winGif = document.createElement('img')
+    winGif.setAttribute('src', winningGifs[0])
+    winnerDiv.appendChild(winGif)
   }
   console.log('this is the winning div index ', randomSqIdx);
 }
