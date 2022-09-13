@@ -62,6 +62,7 @@ const winnerDiv = document.getElementById('winDiv')
 const deliverAssetEnd = document.getElementById('deliverAssetEnd')
 const returnToPubDiv = document.getElementById('returnToPubDiv')
 const backgroundDiv = document.getElementById('backgroundDiv')
+const pubIntro = document.getElementById('pubIntro')
 
 // EVENT LISTENERS //
 
@@ -107,14 +108,16 @@ function handlePlayClick() {
   forestTimer.style.display = "none";
   desertTimer.style.display = "none";
 
-  introEl.style.display = "none"
   titleEl.style.display = "none"
   playGameBtn.style.display = "none"
   returnToPubBtn.style.display = "none"
-
+  
+  introEl.style.display = "block"
   explorePubBtn.style.display = "block"
   searchForestBtn.style.display = "block"
   searchDesertBtn.style.display = "block"
+
+  introEl.textContent = 'Welcome, Mando. Your client has hired you to find a high-value asset. Before you set out on your search to the Forest or the Desert, take a minute to explore the pub.'
 }
 
 function firstPubGif() {
