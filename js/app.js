@@ -55,11 +55,13 @@ const forestBoard = document.getElementById("forestBoard")
 const squareEls = document.querySelectorAll('.square')
 const pubMediaDiv = document.getElementById('pubMedia')
 const desertTimer = document.getElementById('desertTimer')
+const forestTimer = document.getElementById('desertTimer')
 const winnerDiv = document.getElementById('winDiv')
 const deliverAssetEnd = document.getElementById('deliverAssetEnd')
 const returnToPubDiv = document.getElementById('returnToPubDiv')
 const backgroundDiv = document.getElementById('backgroundDiv')
 const pubIntro = document.getElementById('pubIntro')
+const pubVidControls = document.getElementById('pubVid')
 
 // EVENT LISTENERS //
 
@@ -67,14 +69,15 @@ playGameBtn.addEventListener('click', handlePlayClick);
 
 searchForestBtn.addEventListener('click', renderForestGame);
 searchDesertBtn.addEventListener('click', renderDesertGame);
+
 explorePubBtn.addEventListener('click', explorePub);
 returnToPubBtn.addEventListener('click', returnToPub);
 
 searchDesertBtn.addEventListener('click', playDesertGame)
 desertBoard.addEventListener('click', desertWinner)
+
 searchForestBtn.addEventListener('click', playForestGame)
 forestBoard.addEventListener('click', forestWinner)
-
 
 deliverAssetBtn.addEventListener('click', deliverAssetEnding);
 harborChildBtn.addEventListener('click', harborChildEnding);
@@ -102,6 +105,7 @@ function handlePlayClick() {
   desertBoard.style.display = "none"
   forestTimer.style.display = "none"
   desertTimer.style.display = "none"
+  returnToPubDiv.style.display = "none"
 
   titleEl.style.display = "none"
   playGameBtn.style.display = "none"
@@ -119,8 +123,9 @@ function firstPubVid() {
   let pubVid = document.createElement('video')
   let randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
   pubVid.setAttribute('src', randomPubMedia)
-  pubVid.width = 600;
-  pubVid.height = 300;
+  pubVid.width = 800;
+  pubVid.height = 600;
+  pubVid.controls = true;
   pubMediaDiv.appendChild(pubVid)
   pubVid.play();
 }
@@ -135,7 +140,6 @@ function explorePub() {
   mandalorianSong.pause();
   firstPubVid();
 
-  desertTimer.textContent = ""
   desertTimer.style.display = "none"
   forestBoard.style.display = "none"
   desertBoard.style.display = "none"
@@ -143,11 +147,12 @@ function explorePub() {
 
 function renderDesertGame() {
 
+  introEl.style.display = "block"
+  introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
+
   pubMediaDiv.hidden = true;
   forestBoard.style.display = "none";
   desertBoard.style.display = "grid"
-
-  console.log('this is the desert game');
 
   searchForestBtn.style.display = "none";
   explorePubBtn.style.display = "none";
@@ -168,27 +173,28 @@ function renderDesertGame() {
     count++;
     desertBoard.appendChild(div);
   }
-  console.log('this is the', desertBoard)
 }
 
 function playDesertGame() {
+  returnToPubBtn.style.display = "none";
+  forestTimer.style.display = "block";
+
   mandalorianSong.play();
-  pubVid.pause();
 
   let timeLeft = 10;
 
   introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
-
-  returnToPubBtn.style.display = "none";
-  desertTimer.style.display = "block";
 
   let desertCountdown = setInterval(function () {
 
     if (timeLeft > 0) {
       timeLeft -= 1;
     }
+      desertTimer.textContent = timeLeft + ' seconds remaining'
 
-    desertTimer.textContent = timeLeft + ' seconds remaining'
+    if (timeLeft === 1) {
+      desertTimer.textContent = timeLeft + ' second remaining'
+    }
 
     if (timeLeft === 0) {
 
@@ -196,7 +202,6 @@ function playDesertGame() {
       desertTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Forest of Assembly?"
 
       desertBoard.style.display = "none";
-      returnToPubDiv.style.display = "none";
       returnToPubBtn.style.display = "block";
 
       clearInterval(desertCountdown);
@@ -232,16 +237,18 @@ function desertWinner(event) {
 }
 
 function renderForestGame() {
-  pubVid.pause();
+
+  introEl.style.display = "block"
+  introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
 
   pubMediaDiv.hidden = true;
-  desertBoard.style.display = "none";
-  forestBoard.style.display = "grid";
+  desertBoard.style.display = "none"
+  forestBoard.style.display = "grid"
 
-  searchForestBtn.style.display = "none";
-  explorePubBtn.style.display = "none";
-  searchDesertBtn.style.display = "none";
-  returnToPubBtn.style.display = "block";
+  searchForestBtn.style.display = "none"
+  explorePubBtn.style.display = "none"
+  searchDesertBtn.style.display = "none"
+  returnToPubBtn.style.display = "block"
 
   let count = 0;
   for (i = 0; i < 36; i++) {
@@ -262,12 +269,14 @@ function renderForestGame() {
 }
 
 function playForestGame() {
+  returnToPubBtn.style.display = "none";
+  forestTimer.style.display = "block";
+
+  mandalorianSong.play();
+
   let timeLeft = 10;
 
   introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
-
-  returnToPubBtn.style.display = "none";
-  forestTimer.style.display = "block";
 
   let forestCountdown = setInterval(function () {
 
@@ -276,6 +285,10 @@ function playForestGame() {
     }
 
     forestTimer.textContent = timeLeft + ' seconds remaining'
+
+    if (timeLeft === 1) {
+      forestTimer.textContent = timeLeft + ' second remaining'
+    }
 
     if (timeLeft === 0) {
 
@@ -319,7 +332,7 @@ function forestWinner(event) {
 
 function returnToPub() {
   introEl.textContent = 'Welcome back to the Pub, Mando. Before you set out on your next bounty hunt, take a minute to explore.'
-  returnToPubDiv.style.display = "block"
+  returnToPubDiv.style.display = "none"
   desertTimer.textContent = ""
   forestTimer.textContent = ""
   winnerDiv.style.display = "none"

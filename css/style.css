@@ -20,8 +20,7 @@ main {
   font-weight: 700;
   font-style: normal;
   font-size: 10px;
-  padding: 10px;
-  margin: 10px;
+  padding: 10px 10px 10px 10px;
   color: #E3F2FD;
   background-color: #9C3848;
   text-shadow: 3px 3px black;
@@ -53,7 +52,22 @@ main {
   background-color: #9C3848;
 }
 
-#forestTimer, #forestTimerDiv, #desertTimer, #desertTimerDiv, #winDiv, #winMessage, #returnToPubDiv {
+#desertTimer,
+#forestTimer {
+  font-family: video-cond, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  padding: 15px;
+  margin: 40px;
+  color: #E3F2FD;
+  font-size: 40px;
+  margin: 40px;
+  text-shadow: 3px 3px black;
+  background-color: #9C3848;
+}
+
+#winDiv, #winMessage, #returnToPubDiv {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
@@ -231,8 +245,16 @@ main {
     font-size: 60px;
   }
 
-  #desertTimer,
-  #forestTimer {
+  #desertTimerDiv,
+  #forestTimerDiv {
+    font-family: video-cond, serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    border-radius: 5%;
+    padding: 15px;
+    margin: 40px;
+    color: #E3F2FD;
     font-size: 40px;
     margin: 40px;
   }
