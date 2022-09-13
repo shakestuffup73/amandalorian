@@ -2,7 +2,7 @@
 
 // let desertGame, forestGame
 
-let timeLeft = 10;
+let timeLeft = 100;
 
 let pubMedias = [
   './media/gifs/disintegratejawa.gif',
@@ -93,6 +93,7 @@ harborChildBtn.style.display = "none"
 resetGameBtn.style.display = "none"
 forestTimer.style.display = "none"
 desertTimer.style.display = "none"
+harborChildEnding.style.display = "none"
 
 mandalorianSong.play();
 
@@ -103,10 +104,10 @@ if (typeof mandalorianSong.loop === 'boolean') {
 }
 
 function handlePlayClick() {
-  forestBoard.style.display = "none";
-  desertBoard.style.display = "none";
-  forestTimer.style.display = "none";
-  desertTimer.style.display = "none";
+  forestBoard.style.display = "none"
+  desertBoard.style.display = "none"
+  forestTimer.style.display = "none"
+  desertTimer.style.display = "none"
 
   titleEl.style.display = "none"
   playGameBtn.style.display = "none"
@@ -117,7 +118,7 @@ function handlePlayClick() {
   searchForestBtn.style.display = "block"
   searchDesertBtn.style.display = "block"
 
-  introEl.textContent = 'Welcome, Mando. Your client has hired you to find a high-value asset. Before you set out on your search to the Forest or the Desert, take a minute to explore the pub.'
+  introEl.textContent = 'Welcome, Mando. Your client has hired you to find a high-value asset. Before you set out on your search to the Forest or the Desert of Assembly, take a minute to explore the pub.'
 }
 
 function firstPubGif() {
@@ -173,8 +174,9 @@ function renderDesertGame() {
 }
 
 function playDesertGame() {
-  let timeLeft = 10;
-  returnToPubDiv.innerHTML = "Click each grid square to try and find The Asset! But hurry, you have only 10 seconds to complete your mission!"
+  let timeLeft = 100;
+  introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
+  desertTimer.textContent = ""
   returnToPubBtn.style.display = "none";
   desertTimer.style.display = "block";
 
@@ -212,8 +214,8 @@ function desertWinner(event) {
     desertTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
 
-    winnerDiv.textContent = "You found The Asset, and it appears to be a Child!"
-    returnToPubDiv.innerHTML = "Now you must choose what to do with it!"
+    introEl.textContent = "You found The Asset in the Desert of Assembly, and it appears to be a Child!"
+    winnerDiv.textContent = "Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?"
 
     let winGif = document.createElement('img');
     winGif.setAttribute('src', winningGifs[0]);
@@ -255,10 +257,10 @@ function renderForestGame() {
 }
 
 function playForestGame() {
-  let timeLeft = 10;
+  let timeLeft = 100;
   forestTimer.style.display = "block";
   returnToPubBtn.style.display = "none"
-  returnToPubDiv.innerHTML = "Click each grid square to try and find The Asset! But hurry, you have only 10 seconds to complete your mission!"
+  introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
 
   let forestCountdown = setInterval(function () {
 
@@ -294,8 +296,8 @@ function forestWinner(event) {
     forestTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
 
-    winnerDiv.textContent = "You found The Asset, and it appears to be a Child!"
-    returnToPubDiv.innerHTML = "Now you must choose what to do with it!"
+    introEl.textContent = "You found The Asset in the Forest of Assembly, and it appears to be a Child!"
+    winnerDiv.textContent = "Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?"
 
     let winGif = document.createElement('img');
     winGif.setAttribute('src', winningGifs[0]);

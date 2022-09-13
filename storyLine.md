@@ -4,7 +4,7 @@
 <div>
 <h2> The Hunt: Find the Asset </h1>
 <br>
-<h3> A lone bounty hunter, Mandalorian, is tasked with finding a vague asset. With no information other than a radar tracker, Mando begins a general search in the Desert of Assembly and The Forest of Assembly. To find the asset, the player must click on each grid square. However, there are no guarantees the asset is there. If the user does not choose correctly in the allotted time, they will be forced to return to the pub and begin their quest again.</h3>
+<h3> A lone bounty hunter, Mandalorian, is tasked with finding a vague asset. With no information other than to follow a radar tracker, Mando begins a general search in the Desert of Assembly and The Forest of Assembly. To find the asset, the player must click on each grid square. However, there are no guarantees the asset is there. If the user does not choose correctly in the allotted time, they will be forced to return to the pub and begin their quest again.</h3>
 </div>
 <br>
 <h2> Finding The Asset </h2>
