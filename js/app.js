@@ -84,6 +84,8 @@ harborChildBtn.addEventListener('click', harborChildEnding);
 
 
 // FUNCTIONS //
+mandalorianSong.play();
+
 searchDesertBtn.style.display = "none"
 searchForestBtn.style.display = "none"
 explorePubBtn.style.display = "none"
@@ -93,13 +95,11 @@ harborChildBtn.style.display = "none"
 resetGameBtn.style.display = "none"
 forestTimer.style.display = "none"
 desertTimer.style.display = "none"
-harborChildEnding.style.display = "none"
 
-mandalorianSong.play();
 
 if (typeof mandalorianSong.loop === 'boolean') {
   mandalorianSong.loop = true;
-  mandalorianSong.volume = .1;
+  mandalorianSong.volume = .4;
   mandalorianSong.play();
 }
 
@@ -216,7 +216,7 @@ function desertWinner(event) {
     forestTimer.style.display = "none";
     desertTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
-    
+
     deliverAssetBtn.style.display = "block";
     harborChildBtn.style.display = "block";
 
@@ -300,7 +300,7 @@ function forestWinner(event) {
     winnerDiv.style.display = "block";
     forestTimer.style.display = "none";
     returnToPubBtn.style.display = "none";
-    
+
     deliverAssetBtn.style.display = "block";
     harborChildBtn.style.display = "block";
 
