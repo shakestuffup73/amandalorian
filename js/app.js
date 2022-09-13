@@ -5,15 +5,12 @@
 let timeLeft = 10;
 
 let pubMedias = [
-  './media/gifs/disintegratejawa.gif',
-  './media/gifs/babyyodawhiteclaw.gif',
-  './media/gifs/mandonewarmor.gif',
-  './media/gifs/flyinggrogu.gif',
-  './media/gifs/thisistheway.gif',
-  './media/gifs/happybabyyoda.gif',
-  './media/gifs/ihavespoken.gif',
-  './media/gifs/entersdramatically.gif',
-  './media/gifs/mandocoffee.gif',
+  './media/videos/LukeGrogu.mp4',
+  './media/videos/Scene1.mp4',
+  './media/videos/Season1Trailer.mp4',
+  './media/videos/Season2Trailer.mp4',
+  './media/videos/Season2Trailer.mp4',
+  './media/videos/Season3Trailer.mp4',
 ]
 
 let desertPics = [
@@ -84,7 +81,6 @@ harborChildBtn.addEventListener('click', harborChildEnding);
 
 
 // FUNCTIONS //
-mandalorianSong.play();
 
 searchDesertBtn.style.display = "none"
 searchForestBtn.style.display = "none"
@@ -96,10 +92,9 @@ resetGameBtn.style.display = "none"
 forestTimer.style.display = "none"
 desertTimer.style.display = "none"
 
-
 if (typeof mandalorianSong.loop === 'boolean') {
   mandalorianSong.loop = true;
-  mandalorianSong.volume = .4;
+  mandalorianSong.volume = .1;
   mandalorianSong.play();
 }
 
@@ -122,7 +117,7 @@ function handlePlayClick() {
 }
 
 function firstPubGif() {
-  let pubGif = document.createElement('img')
+  let pubGif = document.createElement('video')
   let randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
   pubGif.setAttribute('src', randomPubMedia)
 
