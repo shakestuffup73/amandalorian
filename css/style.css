@@ -56,17 +56,17 @@ main {
   background-color: #9C3848;
 }
 
+
 #desertTimer,
 #forestTimer {
   font-family: video-cond, serif;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   font-size: 10px;
   padding: 15px;
-  margin: 40px;
+  margin: 20px;
   color: #E3F2FD;
   font-size: 20px;
-  margin: 40px;
   text-shadow: 3px 3px black;
   background-color: #9C3848;
 }
