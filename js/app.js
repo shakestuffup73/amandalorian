@@ -79,7 +79,6 @@ forestBoard.addEventListener('click', forestWinner)
 deliverAssetBtn.addEventListener('click', deliverAssetEnding);
 harborChildBtn.addEventListener('click', harborChildEnding);
 
-
 // FUNCTIONS //
 
 searchDesertBtn.style.display = "none"
@@ -116,12 +115,14 @@ function handlePlayClick() {
   introEl.textContent = 'Welcome, Mando. Your client has hired you to find a high-value asset. Before you set out on your search to the Forest or the Desert of Assembly, take a minute to explore the pub.'
 }
 
-function firstPubGif() {
-  let pubGif = document.createElement('video')
+function firstPubVid() {
+  let pubVid = document.createElement('video')
   let randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
-  pubGif.setAttribute('src', randomPubMedia)
-
-  pubMediaDiv.appendChild(pubGif)
+  pubVid.setAttribute('src', randomPubMedia)
+  pubVid.width = 600;
+  pubVid.height = 300;
+  pubMediaDiv.appendChild(pubVid)
+  pubVid.play();
 }
 
 function explorePub() {
@@ -131,7 +132,8 @@ function explorePub() {
   pubMediaDiv.innerHTML = ""
   pubMediaDiv.hidden = false;
 
-  firstPubGif();
+  mandalorianSong.pause();
+  firstPubVid();
 
   desertTimer.textContent = ""
   desertTimer.style.display = "none"
@@ -140,6 +142,7 @@ function explorePub() {
 }
 
 function renderDesertGame() {
+
   pubMediaDiv.hidden = true;
   forestBoard.style.display = "none";
   desertBoard.style.display = "grid"
@@ -169,6 +172,9 @@ function renderDesertGame() {
 }
 
 function playDesertGame() {
+  mandalorianSong.play();
+  pubVid.pause();
+
   let timeLeft = 10;
 
   introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
@@ -226,6 +232,8 @@ function desertWinner(event) {
 }
 
 function renderForestGame() {
+  pubVid.pause();
+
   pubMediaDiv.hidden = true;
   desertBoard.style.display = "none";
   forestBoard.style.display = "grid";

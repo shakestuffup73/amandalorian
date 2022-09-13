@@ -201,6 +201,11 @@ main {
 
 @media only screen and (min-width: 768px) {
 
+  #pubGif>video {
+    width: 1200;
+    height: 800;
+  }
+
   #forestBoard, #desertBoard {
     display: grid;
     grid-template-rows: repeat(6, 15vmin);
