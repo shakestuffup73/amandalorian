@@ -61,7 +61,7 @@ main {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 20px;
+  font-size: 10px;
   padding: 15px;
   margin: 40px;
   color: #E3F2FD;
@@ -98,15 +98,7 @@ main {
   text-shadow: 3px 3px black;
 }
 
-#buttonsContainer {
-  display: grid;
-  grid-template-columns: 6;
-  grid-template-rows: 8;
-}
-
 #playGameBtn {
-  grid-column: 3;
-  grid-row: 3;
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
