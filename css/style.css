@@ -14,7 +14,9 @@ main {
   justify-content: center;
 }
 
-#explorePubDiv, #pubMedia, #winDiv {
+#explorePubDiv,
+#pubMedia,
+#winDiv {
   text-align: center;
   font-family: video-cond, serif;
   font-weight: 700;
@@ -26,7 +28,9 @@ main {
   text-shadow: 3px 3px black;
 }
 
-#explorePubDiv>img, #pubMedia>img, #winDiv>img {
+#explorePubDiv>img,
+#pubMedia>img,
+#winDiv>img {
   color: #E3F2FD;
   border: 3px solid;
 }
@@ -45,7 +49,7 @@ main {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 40px;
+  font-size: 20px;
   padding: 10px;
   color: #E3F2FD;
   text-shadow: 3px 3px black;
@@ -57,7 +61,7 @@ main {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 30px;
+  font-size: 20px;
   padding: 15px;
   margin: 40px;
   color: #E3F2FD;
@@ -67,11 +71,13 @@ main {
   background-color: #9C3848;
 }
 
-#winDiv, #winMessage, #returnToPubDiv {
+#winDiv,
+#winMessage,
+#returnToPubDiv {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 20px;
+  font-size: 10px;
   padding: 5px;
   color: #E3F2FD;
   background-color: #9C3848;
@@ -134,7 +140,8 @@ main {
   box-shadow: 0px 1px 16px 1px #9C3848, 0px 1px 16px 1px #9C3848;
 }
 
-#forestBoard, #desertBoard {
+#forestBoard,
+#desertBoard {
   display: grid;
   row-gap: 10px;
   column-gap: 10px;
@@ -167,7 +174,8 @@ main {
   align-items: center;
 }
 
-#searchForestBtn, #searchDesertBtn {
+#searchForestBtn,
+#searchDesertBtn {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
@@ -195,7 +203,9 @@ main {
 }
 
 #explorePubBtn,
-#returnToPubBtn, #harborChildBtn, #deliverAssetBtn {
+#returnToPubBtn,
+#harborChildBtn,
+#deliverAssetBtn {
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
@@ -220,7 +230,8 @@ main {
     height: 800;
   }
 
-  #forestBoard, #desertBoard {
+  #forestBoard,
+  #desertBoard {
     display: grid;
     grid-template-rows: repeat(6, 15vmin);
     grid-template-columns: repeat(6, 15vmin);
@@ -272,7 +283,8 @@ main {
     font-size: 60px;
   }
 
-  #desertBoard, #forestBoard {
+  #desertBoard,
+  #forestBoard {
     display: grid;
     grid-template-rows: repeat(6, 20vmin);
     grid-template-columns: repeat(6, 20vmin);
