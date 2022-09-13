@@ -27,12 +27,10 @@ LINK TO PLAY GAME HERE:
 </ul>
 <br>
 <h3> Media Credits/Legal Disclosure </h3>
-<br>
 <h4>All media used is legal copyright of Disney. This game is for educational purposes only and is not for profit, sale or distribution. Still images are from "The Art of The Mandalorian," with concept art by Ryan Church, Christian Alzmann, Nick Gindraux, Anton Grandert, Doug Chiang and John Park.
 <br>
 <br>Any credit omissions are not intentional and will be updated accordingly. Please message me if any adjustments to credits should be made.
 </h4>
-<br>
 <br>
 <h3>Sources</h3>
 <br>
@@ -59,12 +57,12 @@ LINK TO PLAY GAME HERE:
 <i>
 </ul>
 <br>
-<br>
 Please download the .jpg file to review planning flowchart for building the Amandalorian game
 <br> 
 <br>
-<br>
 Amandalorian Pseudo-Code
+
+<br>
 
 1. Create opening credits scene
 

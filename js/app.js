@@ -84,6 +84,8 @@ harborChildBtn.addEventListener('click', harborChildEnding);
 
 // FUNCTIONS //
 
+mandalorianSong.play();
+
 searchDesertBtn.style.display = "none"
 searchForestBtn.style.display = "none"
 explorePubBtn.style.display = "none"
@@ -190,7 +192,7 @@ function playDesertGame() {
     if (timeLeft > 0) {
       timeLeft -= 1;
     }
-      desertTimer.textContent = timeLeft + ' seconds remaining'
+    desertTimer.textContent = timeLeft + ' seconds remaining'
 
     if (timeLeft === 1) {
       desertTimer.textContent = timeLeft + ' second remaining'
