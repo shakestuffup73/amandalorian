@@ -14,9 +14,42 @@ main {
   justify-content: center;
 }
 
+img {
+  height: 120px;
+  width: 120px;
+}
+
+video {
+  height: 200px;
+  width: 290px;
+}
+
+#intro {
+  font-family: video-cond, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: #E3F2FD;
+  text-shadow: 3px 3px #9C3848;
+}
+
+#titleDiv {
+  font-family: forgotten-futurist-shadow, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 30px;
+  color: #E3F2FD;
+}
+
+#title {
+  text-align: center;
+  color: #E3F2FD;
+  text-shadow: 3px 3px black;
+  font-size: 50px;
+}
+
 #explorePubDiv,
-#pubMedia,
-#winDiv {
+#pubMedia {
   text-align: center;
   font-family: video-cond, serif;
   font-weight: 700;
@@ -29,19 +62,9 @@ main {
 }
 
 #explorePubDiv>img,
-#pubMedia>img,
-#winDiv>img {
+#pubMedia>img {
   color: #E3F2FD;
   border: 3px solid;
-}
-
-#intro {
-  font-family: video-cond, serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 30px;
-  color: #E3F2FD;
-  text-shadow: 3px 3px #9C3848;
 }
 
 #deliverAssetEnd,
@@ -55,7 +78,6 @@ main {
   text-shadow: 3px 3px black;
   background-color: #9C3848;
 }
-
 
 #desertTimer,
 #forestTimer {
@@ -71,33 +93,26 @@ main {
   background-color: #9C3848;
 }
 
-#winDiv,
-#winMessage,
-#returnToPubDiv {
+#winDiv {
+  display: flex;
+  justify-content: center;
   font-family: video-cond, serif;
   font-weight: 700;
   font-style: normal;
   font-size: 20px;
+  width: 250px;
   padding: 10px;
-  margin: 30px, 30px, 30px, 30px;
-  padding: 20px, 20px, 20px, 20px;
   color: #E3F2FD;
   background-color: #9C3848;
   text-shadow: 3px 3px black;
 }
 
-#titleDiv {
-  font-family: forgotten-futurist-shadow, sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 30px;
-  color: #E3F2FD;
-}
-
-#title {
-  text-align: center;
-  color: #E3F2FD;
-  text-shadow: 3px 3px black;
+#winGif {
+  object-fit: cover;
+  display: flex;
+  width: 90%;
+  border: 3px solid #E3F2FD;
+  margin: 10px;
 }
 
 #playGameBtn {
@@ -219,9 +234,18 @@ main {
 
 @media only screen and (min-width: 768px) {
 
-  #pubGif>video {
-    width: 1200;
-    height: 800;
+  img {
+    height: 120px;
+    width: 120px;
+  }
+  
+  video {
+    height: 400px;
+    width: 750px;
+  }
+
+  #title {
+    font-size: 120px;
   }
 
   #forestBoard,
@@ -233,18 +257,24 @@ main {
     margin: 100px 10px 10px 10px;
   }
 
+  #winDiv {
+    font-size: 30px;
+    width: 550px;
+    height: 480px;
+  }
+
+  #winGif {
+    width: 525px;
+    height: 300px;
+  }
+
   #intro,
-  #winDiv,
   #deliverAssetEnd,
-  #harborChildEnd,
-  #winMessage {
+  #harborChildEnd {
     font-size: 40px;
     margin: 60px;
   }
 
-  #titleDiv {
-    font-size: 90px;
-  }
 
   #playGameBtn {
     font-size: 60px;
