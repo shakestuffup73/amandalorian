@@ -219,8 +219,6 @@ function desertWinner(event) {
 
   let sqIdx = parseInt(event.target.parentElement.id.replace('sq', ''))
 
-  console.log('this is the index of the clicked div', sqIdx)
-
   if (sqIdx === randomSqIdx) {
     winDiv.innerHTML = ""
     desertBoard.style.display = "none"
@@ -228,7 +226,7 @@ function desertWinner(event) {
     desertTimer.style.display = "none"
     forestTimer.style.display = "none"
     returnToPubBtn.style.display = "none"
-    
+
     winDiv.style.display = "block"
     introEl.style.display = "block"
     deliverAssetBtn.style.display = "block"
@@ -239,15 +237,14 @@ function desertWinner(event) {
     let winMessage = document.createElement('div')
     winMessage.setAttribute('id', 'winMessage')
     winDiv.appendChild(winMessage);
-    
+
     winMessage.textContent = "Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?"
 
     let winGif = document.createElement('img')
     winGif.setAttribute('src', winningGifs[0])
-    winGif.setAttribute('id','winGif')
+    winGif.setAttribute('id', 'winGif')
     winDiv.appendChild(winGif)
   }
-  console.log('this is the winning div index ', randomSqIdx);
 }
 
 function renderForestGame() {
@@ -279,7 +276,6 @@ function renderForestGame() {
     forestBoard.appendChild(div);
 
   }
-  console.log('this is the', forestBoard)
 }
 
 function playForestGame() {
@@ -323,8 +319,6 @@ function forestWinner(event) {
 
   let sqIdx = parseInt(event.target.parentElement.id.replace('sq', ''))
 
-  console.log('this is the index of the clicked div', sqIdx)
-
   if (sqIdx === randomSqIdx) {
     winDiv.innerHTML = ""
     desertBoard.style.display = "none"
@@ -347,10 +341,9 @@ function forestWinner(event) {
 
     let winGif = document.createElement('img')
     winGif.setAttribute('src', winningGifs[0])
-    winGif.setAttribute('id','winGif')
+    winGif.setAttribute('id', 'winGif')
     winDiv.appendChild(winGif)
   }
-  console.log('this is the winning div index ', randomSqIdx);
 }
 
 function returnToPub() {
