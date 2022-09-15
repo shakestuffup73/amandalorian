@@ -95,6 +95,9 @@ harborChildBtn.style.display = "none"
 resetGameBtn.style.display = "none"
 forestTimer.style.display = "none"
 desertTimer.style.display = "none"
+forestBoard.style.display = "none"
+desertBoard.style.display = "none"
+winDiv.style.display = "none"
 
 if (typeof mandalorianSong.loop === 'boolean') {
   mandalorianSong.loop = true;
@@ -210,7 +213,7 @@ function playDesertGame() {
       setTimeout(() => {
         introEl.textContent = ""
         winDiv.style.display = "none"
-      }, 7000)
+      }, 15000)
 
       clearInterval(desertCountdown);
     }
@@ -320,7 +323,7 @@ function playForestGame() {
 
       clearInterval(forestCountdown);
     }
-  }, 1000)
+  }, 15000)
 }
 
 function forestWinner(event) {
