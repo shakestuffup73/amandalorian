@@ -214,7 +214,7 @@ function playDesertGame() {
       setTimeout(() => {
         introEl.textContent = ""
         winDiv.style.display = "none"
-      }, 15000)
+      }, 7000)
 
       clearInterval(desertCountdown);
     }
@@ -224,7 +224,8 @@ function playDesertGame() {
 function desertWinner(event) {
 
   let sqIdx = parseInt(event.target.parentElement.id.replace('sq', ''))
-  console.log('this is the div clicked', sqIdx)
+
+  console.log('this is the div index clicked', sqIdx)
   console.log('this is the winning div', randomSqIdx)
 
   if (sqIdx === randomSqIdx) {
@@ -282,7 +283,6 @@ function renderForestGame() {
     div.appendChild(forestImg);
     count++
     forestBoard.appendChild(div);
-
   }
 }
 
@@ -324,12 +324,15 @@ function playForestGame() {
 
       clearInterval(forestCountdown);
     }
-  }, 15000)
+  }, 1000)
 }
 
 function forestWinner(event) {
 
   let sqIdx = parseInt(event.target.parentElement.id.replace('sq', ''))
+
+  console.log('this is the div index clicked', sqIdx)
+  console.log('this is the winning div', randomSqIdx)
 
   if (sqIdx === randomSqIdx) {
     winDiv.innerHTML = ""
