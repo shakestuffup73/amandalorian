@@ -3,7 +3,7 @@
 <h3>ABOUT THE GAME</h3>
 
 <i>
-Amandalorian is the story of a bounty hunter, who the user plays as. Starting scene sets the plot of the game, and a button appears to "Play Game". Upon clicking the "Play Game" button, the user is brought to a pub, where a story appears about their "client" asking them to find "The Asset." Not much information is provided about what "The Asset" is, only that you must begin your search for it.  Two buttons appear for where to begin the search - the first button is "The Desert" and the second button is "The Forest." Both options will bring the user to a game of chance - clicking images to find and reveal "The Asset." However, clicks are risks! The first click that does not reveal "The Asset" begins a countdown timer. Find "The Asset" before the timer is up, or the board resets and randomizes again.  A button is available near both game boards to return to the pub scene, where you can explore the pub (animation/videos will appear) through button clicks. Upon successfully finding "The Asset," a story appears about how you did not know "The Asset" was actually a child. You are then presented with two options - a button to "Deliver the Asset" to your client, or a button to "Harbor the Child" and become a fugitive.  Choose your own adventure, play a game, then choose your ending!</i>
+Amandalorian follows the story of a bounty hunter, who the user plays as. Starting scene sets the plot of the game, and a button appears to "Play Game". Upon clicking the "Play Game" button, the user is brought to a pub, where a story appears about their "client" asking them to find "The Asset." Not much information is provided about what "The Asset" is, only that you must begin your search for it.  Two buttons appear for where to begin the search - the first button is "The Desert" and the second button is "The Forest." Both options will bring the user to a game of chance - clicking images to find and reveal "The Asset." However, clicks are risks! The first click that does not reveal "The Asset" begins a countdown timer. Find "The Asset" before the timer is up, or the board resets and randomizes again.  A button is available near both game boards to return to the pub scene, where you can explore the pub (animation/videos will appear) through button clicks. Upon successfully finding "The Asset," you are then presented with two game ending options.  Choose your own adventure, play a game, then choose your ending!</i>
 <br>
 <br>
 <br>
@@ -14,6 +14,9 @@ LINK TO PLAY GAME HERE:
 <br>
 
 ![Game Screenshot](./media/ScreenShot.png)
+<br>
+<br>
+![Game Screenshot](./media/ScreenShot2.png)
 <br>
 <br>
 <h3> Technologies Used</h3>
@@ -38,8 +41,10 @@ LINK TO PLAY GAME HERE:
   <li>Disney for all media</li>
   <li>https://animate.style/</li>
   <li>https://developer.mozilla.org/en-US/</li>
-  <li>https://stackoverflow.com</li>
-  <li>https://www.youtube.com</li>
+</ul>
+
+<h3>Special thanks to the following for engineering and emotional support:</h3>
+<ul>
   <li>General Assembly Engineering Channel</li>
   <li>King Manley the Third</li>
 </ul>
@@ -57,13 +62,13 @@ LINK TO PLAY GAME HERE:
 <i>
 </ul>
 <br>
-Please download the .jpg file to review planning flowchart for building the Amandalorian game
+Please download the following .jpg file to review planning flowchart for building the Amandalorian game
+
+![Planning Flowchart](./media/Amandalorian.jpg)
 <br> 
 <br>
 Amandalorian Pseudo-Code
-
 <br>
-
 1. Create opening credits scene
 
  1a) Title centered on landing page, animated to move a bit, background music to Mandalorian opening
