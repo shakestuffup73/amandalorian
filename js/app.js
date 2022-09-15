@@ -2,7 +2,7 @@
 
 // let desertGame, forestGame
 
-let timeLeft = 10;
+let timeLeft = 20;
 
 let pubMedias = [
   './media/videos/LukeGrogu.mp4',
@@ -186,7 +186,7 @@ function playDesertGame() {
 
   mandalorianSong.play();
 
-  let timeLeft = 10;
+  let timeLeft = 20;
 
   introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
 
@@ -202,13 +202,15 @@ function playDesertGame() {
     }
 
     if (timeLeft === 0) {
-
-      introEl.textContent = ""
       desertTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Forest of Assembly?"
 
-      winDiv.style.display = "none"
-      desertBoard.style.display = "none";
-      returnToPubBtn.style.display = "block";
+      desertBoard.style.display = "none"
+      returnToPubBtn.style.display = "block"
+
+      setTimeout(() => {
+        introEl.textContent = ""
+        winDiv.style.display = "none"
+      }, 7000)
 
       clearInterval(desertCountdown);
     }
@@ -218,6 +220,8 @@ function playDesertGame() {
 function desertWinner(event) {
 
   let sqIdx = parseInt(event.target.parentElement.id.replace('sq', ''))
+  console.log('this is the div clicked', sqIdx)
+  console.log('this is the winning div', randomSqIdx)
 
   if (sqIdx === randomSqIdx) {
     winDiv.innerHTML = ""
@@ -236,7 +240,7 @@ function desertWinner(event) {
 
     let winMessage = document.createElement('div')
     winMessage.setAttribute('id', 'winMessage')
-    winDiv.appendChild(winMessage);
+    winDiv.appendChild(winMessage)
 
     winMessage.textContent = "Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?"
 
@@ -303,7 +307,11 @@ function playForestGame() {
 
     if (timeLeft === 0) {
 
-      introEl.textContent = ""
+      setTimeout(() => {
+        introEl.textContent = ""
+        winDiv.style.display = "none"
+      }, 7000)
+
       forestTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Desert of Assembly?"
 
       forestBoard.style.display = "none";
@@ -349,13 +357,13 @@ function forestWinner(event) {
 function returnToPub() {
   introEl.textContent = 'Welcome back to the Pub, Mando. Before you set out on your next bounty hunt, take a minute to explore.'
   returnToPubDiv.style.display = "none"
+  returnToPubBtn.style.display = "none"
   desertTimer.style.display = "none"
   forestTimer.style.display = "none"
-  winDiv.style.display = "none"
   forestBoard.style.display = "none"
   desertBoard.style.display = "none"
+  winDiv.style.display = "none"
 
-  returnToPubBtn.style.display = "none"
   deliverAssetBtn.style.display = "none"
   harborChildBtn.style.display = "none"
   deliverAssetEnd.style.display = "none"
