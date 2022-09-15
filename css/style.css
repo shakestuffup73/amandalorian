@@ -31,7 +31,9 @@ video {
   font-size: 20px;
   color: #E3F2FD;
   text-shadow: 3px 3px #9C3848;
+  padding: 20px;
 }
+
 
 #titleDiv {
   font-family: forgotten-futurist-shadow, sans-serif;
@@ -238,7 +240,7 @@ video {
     height: 120px;
     width: 120px;
   }
-  
+
   video {
     height: 400px;
     width: 750px;
@@ -246,6 +248,10 @@ video {
 
   #title {
     font-size: 120px;
+  }
+
+  #intro {
+    padding: 20px;
   }
 
   #forestBoard,

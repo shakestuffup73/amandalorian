@@ -139,6 +139,7 @@ function firstPubVid() {
 function explorePub() {
   returnToPubDiv.innerHTML = ""
   returnToPubDiv.hidden = true;
+  returnToPubBtn.style.display = "none"
   winDiv.hidden = true;
   pubMediaDiv.innerHTML = ""
   pubMediaDiv.hidden = false;
