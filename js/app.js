@@ -2,7 +2,7 @@
 
 // let desertGame, forestGame
 
-let timeLeft = 20;
+let timeLeft = 10;
 
 let pubMedias = [
   './media/videos/LukeGrogu.mp4',
@@ -190,7 +190,7 @@ function playDesertGame() {
 
   mandalorianSong.play();
 
-  let timeLeft = 20;
+  let timeLeft = 10;
 
   introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
 
