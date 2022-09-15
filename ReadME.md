@@ -36,13 +36,11 @@ LINK TO PLAY GAME HERE:
 </h4>
 <br>
 <h3>Sources</h3>
-<br>
 <ul>
   <li>Disney for all media</li>
   <li>https://animate.style/</li>
   <li>https://developer.mozilla.org/en-US/</li>
 </ul>
-
 <h3>Special thanks to the following for engineering and emotional support:</h3>
 <ul>
   <li>General Assembly Engineering Channel</li>
@@ -50,7 +48,6 @@ LINK TO PLAY GAME HERE:
 </ul>
 <br>
 <h4>ICE BOX ITEMS/FUTURE ENHANCEMENTS:</h4>
-<br>
 <ul>
 <li>More CSS styling and animation (incorporate more ideas from pseudo-code)</li>
 <li>Initial landing page with scrolling introduction</li>
@@ -64,6 +61,7 @@ LINK TO PLAY GAME HERE:
 <br>
 Please download the following .jpg file to review planning flowchart for building the Amandalorian game
 
+<h2>Planning Materials</h2>
 ![Planning Flowchart](./media/Amandalorian.jpg)
 <br> 
 <br>
