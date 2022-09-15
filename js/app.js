@@ -18,6 +18,9 @@ let pubMedias = [
   './media/videos/MandoYodaMudhorn.mp4',
   './media/videos/LukeYoda.mp4',
   './media/videos/MandoSaved.mp4',
+  './media/videos/SeagullsStopIt.mp4',
+  './media/videos/BadLipReading.mp4',
+  './media/videos/BadLipReading2.mp4',
 ]
 
 let desertPics = [
