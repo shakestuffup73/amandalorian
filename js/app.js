@@ -288,21 +288,20 @@ function renderForestGame() {
 
 function playForestGame() {
   returnToPubBtn.style.display = "none"
-  desertTimer.style.display = "none"
-  forestTimer.style.display = "block"
+  forestTimer.style.display = "none"
+  desertTimer.style.display = "block"
 
-  mandalorianSong.play()
+  mandalorianSong.play();
 
-  let timeLeft = 10
+  let timeLeft = 10;
 
   introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
 
   let forestCountdown = setInterval(function () {
 
     if (timeLeft > 0) {
-      timeLeft -= 1
+      timeLeft -= 1;
     }
-
     forestTimer.textContent = timeLeft + ' seconds remaining'
 
     if (timeLeft === 1) {
@@ -310,17 +309,15 @@ function playForestGame() {
     }
 
     if (timeLeft === 0) {
+      forestTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Desert of Assembly?"
+
+      forestBoard.style.display = "none"
+      returnToPubBtn.style.display = "block"
 
       setTimeout(() => {
         introEl.textContent = ""
         winDiv.style.display = "none"
       }, 7000)
-
-      forestTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Desert of Assembly?"
-
-      forestBoard.style.display = "none";
-      returnToPubDiv.style.display = "none";
-      returnToPubBtn.style.display = "block";
 
       clearInterval(forestCountdown);
     }
