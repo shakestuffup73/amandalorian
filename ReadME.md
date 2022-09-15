@@ -11,6 +11,7 @@ LINK TO PLAY GAME HERE:
 <br>
 <a href="https://amandalorian.netlify.app/">AMANDALORIAN</a>
 <br>
+<br>
 
 ![Game Screenshot](./media/ScreenShot.png)
 <br>
@@ -26,6 +27,7 @@ LINK TO PLAY GAME HERE:
   <li>Adobe Fonts Style Sheets</li>
   <li>VSCode</li>
   <li>Firefox Developer Tools</li>
+  <li>Google Chrome Developer Tools</li>
 </ul>
 <h3> Media Credits/Legal Disclosure </h3>
 <h4>All media used is legal copyright of Disney. This game is for educational purposes only and is not for profit, sale or distribution. Still images are from "The Art of The Mandalorian," with concept art by Ryan Church, Christian Alzmann, Nick Gindraux, Anton Grandert, Doug Chiang and John Park.
@@ -43,7 +45,10 @@ LINK TO PLAY GAME HERE:
 <h3>Special thanks to the following for engineering and emotional support:</h3>
 <ul>
   <li>General Assembly Engineering Channel</li>
-  <li>King Manley the Third</li>
+  <li>King Manley the Third for his wisdom</li>
+  <li>David Stinson for motivating me to be employable</li>
+  <li>Beryl Baldwin for the tough love</li>
+  <li>Hunter, Joe, Ian, Jackson, Emily, Alex - major thanks to the GA IA/TA team!</li>
 </ul>
 <br>
 <h3>ICE BOX ITEMS/FUTURE ENHANCEMENTS:</h3>
