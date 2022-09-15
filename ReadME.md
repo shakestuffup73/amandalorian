@@ -69,6 +69,7 @@ Please download the following .jpg file to review planning flowchart for buildin
 
 ![Planning Flowchart](./media/Amandalorian.jpg)
 <br>
+<br>
 Amandalorian Pseudo-Code
 <br>
 1. Create opening credits scene
