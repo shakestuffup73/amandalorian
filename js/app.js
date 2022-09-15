@@ -11,6 +11,13 @@ let pubMedias = [
   './media/videos/Season2Trailer.mp4',
   './media/videos/Season2Trailer.mp4',
   './media/videos/Season3Trailer.mp4',
+  './media/videos/AhsokaTano.mp4',
+  './media/videos/ForgingBeskar.mp4',
+  './media/videos/babyYoda.mp4',
+  './media/videos/babyYoda2.mp4',
+  './media/videos/MandoYodaMudhorn.mp4',
+  './media/videos/LukeYoda.mp4',
+  './media/videos/MandoSaved.mp4',
 ]
 
 let desertPics = [
@@ -23,6 +30,7 @@ let desertPics = [
   './media/desertpics/spoken.jpg',
   './media/desertpics/blurrgs2.jpg',
   './media/desertpics/mandoship.jpg',
+  './media/desertpics/MandoOrange.jpg',
 ]
 
 let forestPics = [
@@ -31,6 +39,11 @@ let forestPics = [
   './media/forestpics/forest3.jpg',
   './media/forestpics/forest4.jpg',
   './media/forestpics/forest5.jpg',
+  './media/forestpics/forest6.jpg',
+  './media/forestpics/forest7.jpg',
+  './media/forestpics/forest8.jpg',
+  './media/forestpics/forest9.jpg',
+  './media/forestpics/forest10.jpg',
 ]
 
 let winningGifs = [
