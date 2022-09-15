@@ -45,7 +45,8 @@ LINK TO PLAY GAME HERE:
   <li>General Assembly Engineering Channel</li>
   <li>King Manley the Third</li>
 </ul>
-<h4>ICE BOX ITEMS/FUTURE ENHANCEMENTS:</h4>
+<br>
+<h3>ICE BOX ITEMS/FUTURE ENHANCEMENTS:</h3>
 <ul>
 <li>More CSS styling and animation (incorporate more ideas from pseudo-code)</li>
 <li>Initial landing page with scrolling introduction</li>
