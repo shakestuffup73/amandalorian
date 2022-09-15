@@ -136,7 +136,9 @@ function firstPubVid() {
   pubVid.play();
 }
 
-function explorePub() {
+function explorePub(event) {
+  event.target.className = ("animate__animated animate__headShake")
+
   returnToPubDiv.innerHTML = ""
   returnToPubDiv.hidden = true;
   returnToPubBtn.style.display = "none"
@@ -176,7 +178,6 @@ function renderDesertGame() {
     let desertImg = document.createElement('img')
     let randomDesertPic = desertPics[Math.floor(Math.random() * desertPics.length)]
     desertImg.setAttribute('src', randomDesertPic)
-
     div.appendChild(desertImg)
     count++;
     desertBoard.appendChild(div);
@@ -214,7 +215,7 @@ function playDesertGame() {
       setTimeout(() => {
         introEl.textContent = ""
         winDiv.style.display = "none"
-      }, 7000)
+      }, 5000)
 
       clearInterval(desertCountdown);
     }
@@ -257,7 +258,6 @@ function desertWinner(event) {
 }
 
 function renderForestGame() {
-
   introEl.style.display = "block"
   introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
 
@@ -288,8 +288,8 @@ function renderForestGame() {
 
 function playForestGame() {
   returnToPubBtn.style.display = "none"
-  forestTimer.style.display = "none"
-  desertTimer.style.display = "block"
+  desertTimer.style.display = "none"
+  forestTimer.style.display = "block"
 
   mandalorianSong.play();
 
@@ -317,7 +317,7 @@ function playForestGame() {
       setTimeout(() => {
         introEl.textContent = ""
         winDiv.style.display = "none"
-      }, 7000)
+      }, 5000)
 
       clearInterval(forestCountdown);
     }
@@ -418,4 +418,3 @@ function harborChildEnding() {
   assetStory.innerHTML = "Had you known your bounty mission was to recover a Child, you likely would not have accepted. While you do not dare call yourself a parent, you now are responsible for protecting The Child and bringing it somewhere safe. Probably time to consider trading the spaceship in for a minivan. Go forth and find the rightful place for this Child of unknown species. Be safe on your journey. The End...for now.";
   deliverAssetEnd.appendChild(assetStory);
 }
-

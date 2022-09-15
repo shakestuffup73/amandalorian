@@ -234,6 +234,34 @@ video {
   animation: shine 3s linear infinite;
 }
 
+@media only screen and (min-width: 368px) {
+  img {
+    height: 140px;
+    width: 140px;
+  }
+}
+
+@media only screen and (min-width: 468px) {
+  img {
+    height: 160px;
+    width: 160px;
+  }
+}
+
+@media only screen and (min-width: 568px) {
+  img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media only screen and (min-width: 668px) {
+  img {
+    height: 240px;
+    width: 240px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
 
   img {
