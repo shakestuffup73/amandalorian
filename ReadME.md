@@ -11,21 +11,21 @@ LINK TO PLAY GAME HERE:
 <br>
 <a href="https://amandalorian.netlify.app/">AMANDALORIAN</a>
 <br>
-<br>
+
 ![Game Screenshot](./media/ScreenShot.png)
 <br>
-<br>
+
 ![Game Screenshot](./media/ScreenShot2.png)
 <br>
-<br>
+
 <h3>Technologies Used</h3>
 <ul>
-<li>Javascript</li>
-<li>CSS</li>
-<li>HTML</li>
-<li>Adobe Fonts Style Sheets</li>
-<li>VSCode</li>
-<li>Firefox Developer Tools</li>
+  <li>Javascript</li>
+  <li>CSS</li>
+  <li>HTML</li>
+  <li>Adobe Fonts Style Sheets</li>
+  <li>VSCode</li>
+  <li>Firefox Developer Tools</li>
 </ul>
 <h3> Media Credits/Legal Disclosure </h3>
 <h4>All media used is legal copyright of Disney. This game is for educational purposes only and is not for profit, sale or distribution. Still images are from "The Art of The Mandalorian," with concept art by Ryan Church, Christian Alzmann, Nick Gindraux, Anton Grandert, Doug Chiang and John Park.
@@ -48,21 +48,21 @@ LINK TO PLAY GAME HERE:
 <br>
 <h3>ICE BOX ITEMS/FUTURE ENHANCEMENTS:</h3>
 <ul>
-<li>More CSS styling and animation (incorporate more ideas from pseudo-code)</li>
-<li>Initial landing page with scrolling introduction</li>
-<li>Improve mobile device usability and display</li>
-<li>On grid clicks, change image to Jawa or Stormtrooper helmet if they are a "miss"</li>
-<li>Sound effects for each grid click</li>
-<li>Video incorporation</li>
-<li>Enhanced storyline with more choices</li>
+  <li>More CSS styling and animation (incorporate more ideas from pseudo-code)</li>
+  <li>Initial landing page with scrolling introduction</li>
+  <li>Improve mobile device usability and display</li>
+  <li>On grid clicks, change image to Jawa or Stormtrooper helmet if they are a "miss"</li>
+  <li>Sound effects for each grid click</li>
+  <li>Video incorporation</li>
+  <li>Enhanced storyline with more choices</li>
 <i>
 </ul>
 <br>
 Please download the following .jpg file to review planning flowchart for building the Amandalorian game
 
 <h2>Planning Materials</h2>
+
 ![Planning Flowchart](./media/Amandalorian.jpg)
-<br> 
 <br>
 Amandalorian Pseudo-Code
 <br>
