@@ -48,9 +48,8 @@ LINK TO PLAY GAME HERE:
   <li>King Manley the Third for his wisdom</li>
   <li>David Stinson for motivating me to be employable</li>
   <li>Beryl Baldwin for the tough love</li>
-  <li>Hunter, Joe, Ian, Jackson, Emily, Alex - major thanks to the GA IA/TA team!</li>
+  <li>Hunter, Joe, Ian, Jackson, Emily, Alex - major thanks to entire the GA IA/TA team!</li>
 </ul>
-<br>
 <h3>ICE BOX ITEMS/FUTURE ENHANCEMENTS:</h3>
 <ul>
   <li>More CSS styling and animation (incorporate more ideas from pseudo-code)</li>
