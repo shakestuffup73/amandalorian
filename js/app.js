@@ -147,6 +147,7 @@ function firstPubVid() {
   pubVid.setAttribute('src', randomPubMedia)
   pubVid.width = 800;
   pubVid.height = 600;
+  pubVid.volume = .1;
   pubVid.controls = true;
   pubMediaDiv.appendChild(pubVid)
   pubVid.play();
