@@ -50,6 +50,7 @@ LINK TO PLAY GAME HERE:
   <li>Beryl Baldwin for the tough love</li>
   <li>Hunter, Joe, Ian, Jackson, Emily S., Emily L., Alex - major thanks to entire the GA IA/TA team!</li>
 </ul>
+<br>
 <h3>ICE BOX ITEMS/FUTURE ENHANCEMENTS:</h3>
 <ul>
   <li>More CSS styling and animation (incorporate more ideas from pseudo-code)</li>
@@ -57,12 +58,11 @@ LINK TO PLAY GAME HERE:
   <li>Improve mobile device usability and display</li>
   <li>On grid clicks, change image to Jawa or Stormtrooper helmet if they are a "miss"</li>
   <li>Sound effects for each grid click</li>
-  <li>Video incorporation</li>
-  <li>Enhanced storyline with more choices</li>
+  <li>Enhanced storyline with more choices for the pub and endings</li>
 <i>
 </ul>
 <br>
-Please download the following .jpg file to review planning flowchart for building the Amandalorian game
+Please see the following .jpg file to review planning flowchart for building the Amandalorian game
 
 <h2>Planning Materials</h2>
 
