@@ -59,7 +59,6 @@ const mandalorianSong = new Audio("../audio/mandalorian.mp3")
 
 let randomSqIdx = Math.floor(Math.random() * 36)
 
-
 // CACHED ELEMENT REFERENCES //
 
 const playGameBtn = document.getElementById('playGameBtn')
