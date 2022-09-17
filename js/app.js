@@ -1,8 +1,6 @@
 // CONSTANTS //
 
-// let desertGame, forestGame
-
-let timeLeft = 10;
+let timeLeft = 15;
 
 let pubMedias = [
   './media/videos/LukeGrogu.mp4',
@@ -158,7 +156,7 @@ function explorePub() {
   pubMediaDiv.innerHTML = ""
 
   introEl.textContent = "Good choice to explore The Pub, Mando. Here you can learn about the Star Wars series, the Mandalorian series and the Mandalorian People. There are also many videos for you to watch and enjoy. Take your time, your next bounty hunt can wait."
-  
+
   pubMediaDiv.hidden = false
   pubMediaDiv.style.display = "block"
   
@@ -240,9 +238,9 @@ function playDesertGame() {
 
   mandalorianSong.play()
 
-  let timeLeft = 10
+  let timeLeft = 15
 
-  introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
+  introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started."
 
   let desertCountdown = setInterval(function () {
 
@@ -256,6 +254,7 @@ function playDesertGame() {
     }
 
     if (timeLeft === 0) {
+      introEl.textContent = ""
       desertTimer.textContent = "Time's up! I'm sorry Mando, you must head back and try your search again. Maybe The Asset is in the Forest of Assembly?"
 
       desertBoard.style.display = "none"
@@ -343,9 +342,9 @@ function playForestGame() {
 
   mandalorianSong.play()
 
-  let timeLeft = 10
+  let timeLeft = 15
 
-  introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
+  introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started."
 
   let forestCountdown = setInterval(function () {
 
@@ -359,6 +358,7 @@ function playForestGame() {
     }
 
     if (timeLeft === 0) {
+      introEl.textContent = ""
       forestTimer.textContent = "Time's up! I'm sorry Mando, you must head back and try your search again. Maybe The Asset is in the Desert of Assembly?"
 
       forestBoard.style.display = "none"
