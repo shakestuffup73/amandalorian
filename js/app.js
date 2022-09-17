@@ -77,6 +77,9 @@ const backgroundDiv = document.getElementById('backgroundDiv')
 const pubIntro = document.getElementById('pubIntro')
 const pubVidControls = document.getElementById('pubVid')
 
+const buttonsContainer = document.getElementById('buttons-container')
+const pubDivs = document.getElementsByClassName('pubDiv')
+
 // EVENT LISTENERS //
 
 playGameBtn.addEventListener('click', handlePlayClick)
@@ -152,21 +155,52 @@ function firstPubVid() {
 }
 
 function explorePub() {
-
-  returnToPubDiv.innerHTML = ""
-  returnToPubDiv.hidden = true
-  returnToPubBtn.style.display = "none"
-  winDiv.hidden = true
   pubMediaDiv.innerHTML = ""
+
+  introEl.textContent = "Good choice to explore The Pub, Mando. Here you can learn about the Star Wars series, the Mandalorian series and the Mandalorian People. There are also many videos for you to watch and enjoy. Take your time, your next bounty hunt can wait."
+  
   pubMediaDiv.hidden = false
-
-  mandalorianSong.pause();
-  firstPubVid();
-
+  pubMediaDiv.style.display = "block"
+  
   desertTimer.style.display = "none"
   forestTimer.style.display = "none"
   forestBoard.style.display = "none"
   desertBoard.style.display = "none"
+  explorePubBtn.style.display = "none"
+  searchDesertBtn.style.display = "none"
+  searchForestBtn.style.display = "none"
+
+  winDiv.hidden = true
+  returnToPubDiv.hidden = false
+  returnToPubBtn.style.display = "block"
+  returnToPubBtn.textContent = "Go Back"
+
+  mandalorianSong.pause();
+
+  let count = 0;
+  for (i = 0; i < 6; i++) {
+
+    let div = document.createElement('div');
+    div.className = "pubDiv"
+    div.id = `pubDiv${count}`
+
+    let pubDivGif = document.createElement('img')
+    pubDivGif.id = `pubDivGif${count}`
+
+    div.appendChild(pubDivGif)
+    pubMediaDiv.appendChild(div)
+
+    let pubButton = document.createElement('button')
+    pubButton.id = `pubButton${count}`
+
+    let pubDivInfo = document.createElement('h2')
+    pubDivInfo.id = `pubDivInfo${count}`
+
+    div.appendChild(pubDivInfo)
+    div.appendChild(pubButton)
+
+    count++;
+  }
 }
 
 function renderDesertGame() {
@@ -182,6 +216,7 @@ function renderDesertGame() {
   explorePubBtn.style.display = "none"
   searchDesertBtn.style.display = "none"
   returnToPubBtn.style.display = "block"
+  returnToPubBtn.textContent = "Return Home"
 
   let count = 0;
   for (i = 0; i < 36; i++) {
@@ -221,7 +256,7 @@ function playDesertGame() {
     }
 
     if (timeLeft === 0) {
-      desertTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Forest of Assembly?"
+      desertTimer.textContent = "Time's up! I'm sorry Mando, you must head back and try your search again. Maybe The Asset is in the Forest of Assembly?"
 
       desertBoard.style.display = "none"
       returnToPubBtn.style.display = "block"
@@ -283,6 +318,7 @@ function renderForestGame() {
   explorePubBtn.style.display = "none"
   searchDesertBtn.style.display = "none"
   returnToPubBtn.style.display = "block"
+  returnToPubBtn.textContent = "Return Home"
 
   let count = 0;
   for (i = 0; i < 36; i++) {
@@ -323,7 +359,7 @@ function playForestGame() {
     }
 
     if (timeLeft === 0) {
-      forestTimer.textContent = "Time's up! I'm sorry Mando, you must head back to the pub and try your search again. Maybe The Asset is in the Desert of Assembly?"
+      forestTimer.textContent = "Time's up! I'm sorry Mando, you must head back and try your search again. Maybe The Asset is in the Desert of Assembly?"
 
       forestBoard.style.display = "none"
       returnToPubBtn.style.display = "block"
@@ -373,7 +409,9 @@ function forestWinner(event) {
 }
 
 function returnToPub() {
-  introEl.textContent = 'Welcome back to the Pub, Mando. Before you set out on your next bounty hunt, take a minute to explore.'
+  introEl.textContent = 'Welcome back, Mando. Before you set out on your next bounty hunt, take a minute to explore the pub.'
+
+  pubMediaDiv.style.display = "none"
   returnToPubDiv.style.display = "none"
   returnToPubBtn.style.display = "none"
   desertTimer.style.display = "none"
@@ -389,6 +427,8 @@ function returnToPub() {
   explorePubBtn.style.display = "block"
   searchForestBtn.style.display = "block"
   searchDesertBtn.style.display = "block"
+
+  pubDivs.innerHTML = ""
 }
 
 function deliverAssetEnding() {
