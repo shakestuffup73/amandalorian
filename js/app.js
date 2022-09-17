@@ -226,8 +226,8 @@ function explorePub() {
       pubVidBtn.addEventListener('click', () => {
         randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
         pubVid.setAttribute('src', randomPubMedia)
+        pubVid.play();
       })
-      pubVid.play()
     }
     firstPubVid();
   }
