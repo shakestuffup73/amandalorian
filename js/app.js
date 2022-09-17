@@ -150,26 +150,14 @@ function handlePlayClick() {
   introEl.textContent = 'Welcome, Mando. Your client has hired you to find a high-value asset. Before you set out on your search to the Forest or the Desert of Assembly, take a minute to explore the pub.'
 }
 
-function firstPubVid() {
-  let pubVid = document.createElement('video')
-  let randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
-  pubVid.setAttribute('src', randomPubMedia)
-  pubVid.width = 800
-  pubVid.height = 600
-  pubVid.volume = .1
-  pubVid.controls = true
-  pubMediaDiv.appendChild(pubVid)
-  pubVid.play()
-}
-
 function explorePub() {
   pubMediaDiv.innerHTML = ""
-
+  
   introEl.textContent = "Good choice to explore The Pub, Mando. Here you can learn about the Star Wars series, the Mandalorian series, and the Mandalorian People. There are also many videos for you to watch and enjoy. Take your time, your next bounty hunt can wait."
-
+  
   pubMediaDiv.hidden = false
   pubMediaDiv.style.display = "block"
-
+  
   desertTimer.style.display = "none"
   forestTimer.style.display = "none"
   forestBoard.style.display = "none"
@@ -177,42 +165,66 @@ function explorePub() {
   explorePubBtn.style.display = "none"
   searchDesertBtn.style.display = "none"
   searchForestBtn.style.display = "none"
-
+  
   winDiv.hidden = true
   returnToPubDiv.hidden = false
   returnToPubBtn.style.display = "block"
   returnToPubBtn.textContent = "Go Back"
-
+  
   mandalorianSong.pause();
-
+  
   let count = 0;
   for (i = 0; i < 6; i++) {
-
+    
     let div = document.createElement('div');
     div.className = "pubDiv"
     div.id = `pubDiv${count}`
-
+    
     let pubDivGif = document.createElement('img')
     pubDivGif.id = `pubDivGif${count}`
-
+    
     div.appendChild(pubDivGif)
     pubMediaDiv.appendChild(div)
-
+    
     let pubButton = document.createElement('button')
     pubButton.id = `pubButton${count}`
-
+    
     let pubDivInfo = document.createElement('h2')
     pubDivInfo.id = `pubDivInfo${count}`
-
+    
     div.appendChild(pubDivInfo)
     div.appendChild(pubButton)
-
+    
     count++;
   }
+  buildPub();
 }
 
 function buildPub () {
-  pubDiv0.setAttribute = ('src', pubDivGifs[0])
+
+  function firstPubVid() {
+    
+    let pubVidDiv = document.createElement('div')
+    pubVidDiv.id = 'pubVidDiv'
+
+    let pubVid = document.createElement('video')
+    let randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
+    pubVid.setAttribute('src', randomPubMedia)
+    pubVid.width = 800
+    pubVid.height = 600
+    pubVid.volume = .1
+    pubVid.controls = true
+
+    pubVidDiv.appendChild(pubVid)
+    pubMediaDiv.appendChild(pubVidDiv)
+
+    let pubVidBtn = document.createElement('button')
+    pubVidDiv.appendChild(pubVidBtn)
+    pubVidBtn.textContent = "Next Video"
+
+    pubVid.play()
+  }
+  firstPubVid();
 }
 
 function renderDesertGame() {
