@@ -51,6 +51,15 @@ let winningGifs = [
   './media/gifs/babyyodawin.gif',
 ]
 
+let pubDivGifs = [
+  './media/pubDivGifs/disintegratejawa.gif',
+  './media/pubDivGifs/flyinggrogu.gif',
+  './media/pubDivGifs/mandocoffee.gif',
+  './media/pubDivGifs/mandonewarmor.gif',
+  './media/pubDivGifs/thisistheway.gif',
+  './media/pubDivGifs/happybabyyoda.gif',
+]
+
 const mandalorianSong = new Audio("../audio/mandalorian.mp3")
 
 // VARIABLES aka STATE //
@@ -77,6 +86,7 @@ const pubVidControls = document.getElementById('pubVid')
 
 const buttonsContainer = document.getElementById('buttons-container')
 const pubDivs = document.getElementsByClassName('pubDiv')
+const pubDiv0 = document.getElementById('pubDiv0')
 
 // EVENT LISTENERS //
 
@@ -155,11 +165,11 @@ function firstPubVid() {
 function explorePub() {
   pubMediaDiv.innerHTML = ""
 
-  introEl.textContent = "Good choice to explore The Pub, Mando. Here you can learn about the Star Wars series, the Mandalorian series and the Mandalorian People. There are also many videos for you to watch and enjoy. Take your time, your next bounty hunt can wait."
+  introEl.textContent = "Good choice to explore The Pub, Mando. Here you can learn about the Star Wars series, the Mandalorian series, and the Mandalorian People. There are also many videos for you to watch and enjoy. Take your time, your next bounty hunt can wait."
 
   pubMediaDiv.hidden = false
   pubMediaDiv.style.display = "block"
-  
+
   desertTimer.style.display = "none"
   forestTimer.style.display = "none"
   forestBoard.style.display = "none"
@@ -201,6 +211,10 @@ function explorePub() {
   }
 }
 
+function buildPub () {
+  pubDiv0.setAttribute = ('src', pubDivGifs[0])
+}
+
 function renderDesertGame() {
 
   introEl.style.display = "block"
@@ -232,6 +246,10 @@ function renderDesertGame() {
 }
 
 function playDesertGame() {
+  desertTimer.style.background = "none"
+  desertTimer.innerHTML = ""
+  introEl.textContent = ""
+  introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started."
   returnToPubBtn.style.display = "none"
   forestTimer.style.display = "none"
   desertTimer.style.display = "block"
@@ -240,9 +258,8 @@ function playDesertGame() {
 
   let timeLeft = 15
 
-  introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started."
-
   let desertCountdown = setInterval(function () {
+    desertTimer.style.background = '#9C3848'
 
     if (timeLeft > 0) {
       timeLeft -= 1
@@ -261,7 +278,6 @@ function playDesertGame() {
       returnToPubBtn.style.display = "block"
 
       setTimeout(() => {
-        introEl.textContent = ""
         winDiv.style.display = "none"
       }, 5000)
 
@@ -336,17 +352,20 @@ function renderForestGame() {
 }
 
 function playForestGame() {
+  forestTimer.style.background = "none"
+  forestTimer.innerHTML = ""
+  introEl.textContent = ""
+  introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started."
   returnToPubBtn.style.display = "none"
-  desertTimer.style.display = "none"
   forestTimer.style.display = "block"
+  desertTimer.style.display = "none"
 
   mandalorianSong.play()
 
   let timeLeft = 15
 
-  introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started."
-
   let forestCountdown = setInterval(function () {
+    forestTimer.style.background = '#9C3848'
 
     if (timeLeft > 0) {
       timeLeft -= 1
@@ -409,6 +428,7 @@ function forestWinner(event) {
 }
 
 function returnToPub() {
+  introEl.style.display = "block"
   introEl.textContent = 'Welcome back, Mando. Before you set out on your next bounty hunt, take a minute to explore the pub.'
 
   pubMediaDiv.style.display = "none"
