@@ -51,7 +51,7 @@ let winningGifs = [
   './media/gifs/babyyodawin.gif',
 ]
 
-let pubDivGifs = [
+let pubGifs = [
   './media/pubDivGifs/disintegratejawa.gif',
   './media/pubDivGifs/flyinggrogu.gif',
   './media/pubDivGifs/mandocoffee.gif',
@@ -71,8 +71,8 @@ let randomSqIdx = Math.floor(Math.random() * 36)
 const playGameBtn = document.getElementById('playGameBtn')
 const introEl = document.getElementById('intro')
 const titleEl = document.getElementById('title')
-const desertBoard = document.getElementById("desertBoard")
-const forestBoard = document.getElementById("forestBoard")
+const desertBoard = document.getElementById('desertBoard')
+const forestBoard = document.getElementById('forestBoard')
 const squareEls = document.querySelectorAll('.square')
 const desertTimer = document.getElementById('desertTimer')
 const forestTimer = document.getElementById('forestTimer')
@@ -90,6 +90,8 @@ const pubVidBtn = document.getElementById('pubVidBtn')
 
 const pubDivs = document.getElementsByClassName('pubDiv')
 const pubDiv0 = document.getElementById('pubDiv0')
+const pubDivGif0 = document.getElementById('pubDivGif0')
+
 
 // EVENT LISTENERS //
 
@@ -115,18 +117,18 @@ harborChildBtn.addEventListener('click', harborChildEnding)
 
 mandalorianSong.play()
 
-searchDesertBtn.style.display = "none"
-searchForestBtn.style.display = "none"
-explorePubBtn.style.display = "none"
-returnToPubBtn.style.display = "none"
-deliverAssetBtn.style.display = "none"
-harborChildBtn.style.display = "none"
-resetGameBtn.style.display = "none"
-forestTimer.style.display = "none"
-desertTimer.style.display = "none"
-forestBoard.style.display = "none"
-desertBoard.style.display = "none"
-winDiv.style.display = "none"
+searchDesertBtn.style.display = 'none'
+searchForestBtn.style.display = 'none'
+explorePubBtn.style.display = 'none'
+returnToPubBtn.style.display = 'none'
+deliverAssetBtn.style.display = 'none'
+harborChildBtn.style.display = 'none'
+resetGameBtn.style.display = 'none'
+forestTimer.style.display = 'none'
+desertTimer.style.display = 'none'
+forestBoard.style.display = 'none'
+desertBoard.style.display = 'none'
+winDiv.style.display = 'none'
 
 if (typeof mandalorianSong.loop === 'boolean') {
   mandalorianSong.loop = true
@@ -155,38 +157,39 @@ function handlePlayClick() {
 }
 
 function explorePub() {
-  pubMediaDiv.innerHTML = ""
+  pubMediaDiv.innerHTML = ''
 
-  introEl.textContent = "Good choice to explore The Pub, Mando. Here you can learn about the Star Wars series, the Mandalorian series, and the Mandalorian People. There are also many videos for you to watch and enjoy. Take your time, your next bounty hunt can wait."
+  introEl.textContent = 'Good choice to explore The Pub, Mando. Take your time, your next bounty hunt can wait.'
 
   pubMediaDiv.hidden = false
-  pubMediaDiv.style.display = "block"
+  pubMediaDiv.style.display = 'block'
 
-  desertTimer.style.display = "none"
-  forestTimer.style.display = "none"
-  forestBoard.style.display = "none"
-  desertBoard.style.display = "none"
-  explorePubBtn.style.display = "none"
-  searchDesertBtn.style.display = "none"
-  searchForestBtn.style.display = "none"
+  desertTimer.style.display = 'none'
+  forestTimer.style.display = 'none'
+  forestBoard.style.display = 'none'
+  desertBoard.style.display = 'none'
+  explorePubBtn.style.display = 'none'
+  searchDesertBtn.style.display = 'none'
+  searchForestBtn.style.display = 'none'
 
   winDiv.hidden = true
   returnToPubDiv.hidden = false
-  returnToPubBtn.style.display = "block"
-  returnToPubBtn.textContent = "Go Back"
+  returnToPubBtn.style.display = 'block'
+  returnToPubBtn.textContent = 'Go Back'
 
   mandalorianSong.pause();
-
+  
   let count = 0;
   for (i = 0; i < 6; i++) {
-
+    
     let div = document.createElement('div');
     div.className = "pubDiv"
     div.id = `pubDiv${count}`
-
+    
     let pubDivGif = document.createElement('img')
-    pubDivGif.id = `pubDivGif${count}`
-
+    pubDivGif.id = `pubDivGif${count}` 
+    pubDivGif.src = pubGifs[`${count}`]
+  
     div.appendChild(pubDivGif)
     pubMediaDiv.appendChild(div)
 
@@ -201,12 +204,14 @@ function explorePub() {
 
     count++;
   }
+
   function buildPub() {
+
     function firstPubVid() {
-    
+
       let pubVidDiv = document.createElement('div')
       pubVidDiv.id = 'pubVidDiv'
-    
+
       let pubVid = document.createElement('video')
       let randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
       pubVid.setAttribute('src', randomPubMedia)
@@ -214,14 +219,14 @@ function explorePub() {
       pubVid.height = 600
       pubVid.volume = .1
       pubVid.controls = true
-    
+
       pubVidDiv.appendChild(pubVid)
       pubMediaDiv.appendChild(pubVidDiv)
-    
+
       let pubVidBtn = document.createElement('button')
       pubVidDiv.appendChild(pubVidBtn)
       pubVidBtn.id = 'pubVidBtn'
-      pubVidBtn.textContent = "Next Video"
+      pubVidBtn.textContent = 'Next Video'
 
       pubVidBtn.addEventListener('click', () => {
         randomPubMedia = pubMedias[Math.floor(Math.random() * pubMedias.length)]
@@ -231,23 +236,24 @@ function explorePub() {
     }
     firstPubVid();
   }
+
   buildPub();
 }
 
 function renderDesertGame() {
 
-  introEl.style.display = "block"
-  introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
+  introEl.style.display = 'block'
+  introEl.textContent = `Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started.`
 
   pubMediaDiv.hidden = true
-  forestBoard.style.display = "none"
-  desertBoard.style.display = "grid"
+  forestBoard.style.display = 'none'
+  desertBoard.style.display = 'grid'
 
-  searchForestBtn.style.display = "none"
-  explorePubBtn.style.display = "none"
-  searchDesertBtn.style.display = "none"
-  returnToPubBtn.style.display = "block"
-  returnToPubBtn.textContent = "Return Home"
+  searchForestBtn.style.display = 'none'
+  explorePubBtn.style.display = 'none'
+  searchDesertBtn.style.display = 'none'
+  returnToPubBtn.style.display = 'block'
+  returnToPubBtn.textContent = 'Return Home'
 
   let count = 0;
   for (i = 0; i < 36; i++) {
@@ -265,13 +271,13 @@ function renderDesertGame() {
 }
 
 function playDesertGame() {
-  desertTimer.style.background = "none"
-  desertTimer.innerHTML = ""
-  introEl.textContent = ""
-  introEl.textContent = "Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started."
-  returnToPubBtn.style.display = "none"
-  forestTimer.style.display = "none"
-  desertTimer.style.display = "block"
+  desertTimer.style.background = 'none'
+  desertTimer.innerHTML = ''
+  introEl.textContent = ''
+  introEl.textContent = `Welcome to the Desert of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started.`
+  returnToPubBtn.style.display = 'none'
+  forestTimer.style.display = 'none'
+  desertTimer.style.display = 'block'
 
   mandalorianSong.play()
 
@@ -290,14 +296,14 @@ function playDesertGame() {
     }
 
     if (timeLeft === 0) {
-      introEl.textContent = ""
-      desertTimer.textContent = "Time's up! I'm sorry Mando, you must head back and try your search again. Maybe The Asset is in the Forest of Assembly?"
+      introEl.textContent = ''
+      desertTimer.textContent = `Time's up! I'm sorry Mando, you must head back and try your search again. Maybe The Asset is in the Forest of Assembly?`
 
-      desertBoard.style.display = "none"
-      returnToPubBtn.style.display = "block"
+      desertBoard.style.display = 'none'
+      returnToPubBtn.style.display = 'block'
 
       setTimeout(() => {
-        winDiv.style.display = "none"
+        winDiv.style.display = 'none'
       }, 5000)
 
       clearInterval(desertCountdown)
@@ -341,24 +347,24 @@ function desertWinner(event) {
 }
 
 function renderForestGame() {
-  introEl.style.display = "block"
-  introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started."
+  introEl.style.display = 'block'
+  introEl.textContent = `Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 10 seconds to complete your mission, and the time's already started.`
 
   pubMediaDiv.hidden = true
-  desertBoard.style.display = "none"
-  forestBoard.style.display = "grid"
+  desertBoard.style.display = 'none'
+  forestBoard.style.display = 'grid'
 
-  searchForestBtn.style.display = "none"
-  explorePubBtn.style.display = "none"
-  searchDesertBtn.style.display = "none"
-  returnToPubBtn.style.display = "block"
-  returnToPubBtn.textContent = "Return Home"
+  searchForestBtn.style.display = 'none'
+  explorePubBtn.style.display = 'none'
+  searchDesertBtn.style.display = 'none'
+  returnToPubBtn.style.display = 'block'
+  returnToPubBtn.textContent = 'Return Home'
 
   let count = 0;
   for (i = 0; i < 36; i++) {
 
     let div = document.createElement('div')
-    div.className = "square"
+    div.className = 'square'
     div.id = `sq${count}`
     let forestImg = document.createElement('img')
     let randomForestPic = forestPics[Math.floor(Math.random() * forestPics.length)]
@@ -371,13 +377,13 @@ function renderForestGame() {
 }
 
 function playForestGame() {
-  forestTimer.style.background = "none"
-  forestTimer.innerHTML = ""
-  introEl.textContent = ""
-  introEl.textContent = "Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started."
-  returnToPubBtn.style.display = "none"
-  forestTimer.style.display = "block"
-  desertTimer.style.display = "none"
+  forestTimer.style.background = 'none'
+  forestTimer.innerHTML = ''
+  introEl.textContent = ''
+  introEl.textContent = `Welcome to the Forest of Assembly. Click on each grid square to try and find The Asset! But hurry, you only have 15 seconds to complete your mission, and the time's already started.`
+  returnToPubBtn.style.display = 'none'
+  forestTimer.style.display = 'block'
+  desertTimer.style.display = 'none'
 
   mandalorianSong.play()
 
@@ -396,15 +402,15 @@ function playForestGame() {
     }
 
     if (timeLeft === 0) {
-      introEl.textContent = ""
-      forestTimer.textContent = "Time's up! I'm sorry Mando, you must head back and try your search again. Maybe The Asset is in the Desert of Assembly?"
+      introEl.textContent = ''
+      forestTimer.textContent = `Time's up! I'm sorry Mando, you must head back and try your search again. Maybe The Asset is in the Desert of Assembly?`
 
-      forestBoard.style.display = "none"
-      returnToPubBtn.style.display = "block"
+      forestBoard.style.display = 'none'
+      returnToPubBtn.style.display = 'block'
 
       setTimeout(() => {
-        introEl.textContent = ""
-        winDiv.style.display = "none"
+        introEl.textContent = ''
+        winDiv.style.display = 'none'
       }, 5000)
 
       clearInterval(forestCountdown)
@@ -420,24 +426,24 @@ function forestWinner(event) {
   console.log('this is the winning div', randomSqIdx) //-- this is for me to reference during presentation to click a win
 
   if (sqIdx === randomSqIdx) {
-    introEl.textContent = "You found The Asset in the Forest of Assembly, and it appears to be a Child!"
-    winDiv.innerHTML = ""
-    desertBoard.style.display = "none"
-    forestBoard.style.display = "none"
-    forestTimer.style.display = "none"
-    desertTimer.style.display = "none"
-    returnToPubBtn.style.display = "none"
+    introEl.textContent = `You found The Asset in the Forest of Assembly, and it appears to be a Child!`
+    winDiv.innerHTML = ''
+    desertBoard.style.display = 'none'
+    forestBoard.style.display = 'none'
+    forestTimer.style.display = 'none'
+    desertTimer.style.display = 'none'
+    returnToPubBtn.style.display = 'none'
 
-    winDiv.style.display = "block"
-    introEl.style.display = "block"
-    deliverAssetBtn.style.display = "block"
-    harborChildBtn.style.display = "block"
+    winDiv.style.display = 'block'
+    introEl.style.display = 'block'
+    deliverAssetBtn.style.display = 'block'
+    harborChildBtn.style.display = 'block'
 
     let winMessage = document.createElement('div')
     winMessage.setAttribute('id', 'winMessage')
     winDiv.appendChild(winMessage)
 
-    winMessage.textContent = "Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?"
+    winMessage.textContent = `Now you must choose what to do with it. Do you harbor The Child and bring it to safety, or do you deliver The Asset to your client and collect on your bounty?`
 
     let winGif = document.createElement('img')
     winGif.setAttribute('src', winningGifs[0])
@@ -447,45 +453,45 @@ function forestWinner(event) {
 }
 
 function returnToPub() {
-  introEl.style.display = "block"
+  introEl.style.display = 'block'
   introEl.textContent = 'Welcome back, Mando. Before you set out on your next bounty hunt, take a minute to explore the pub.'
 
-  pubMediaDiv.style.display = "none"
-  returnToPubDiv.style.display = "none"
-  returnToPubBtn.style.display = "none"
-  desertTimer.style.display = "none"
-  forestTimer.style.display = "none"
-  forestBoard.style.display = "none"
-  desertBoard.style.display = "none"
-  winDiv.style.display = "none"
+  pubMediaDiv.style.display = 'none'
+  returnToPubDiv.style.display = 'none'
+  returnToPubBtn.style.display = 'none'
+  desertTimer.style.display = 'none'
+  forestTimer.style.display = 'none'
+  forestBoard.style.display = 'none'
+  desertBoard.style.display = 'none'
+  winDiv.style.display = 'none'
 
-  deliverAssetBtn.style.display = "none"
-  harborChildBtn.style.display = "none"
-  deliverAssetEnd.style.display = "none"
+  deliverAssetBtn.style.display = 'none'
+  harborChildBtn.style.display = 'none'
+  deliverAssetEnd.style.display = 'none'
 
-  explorePubBtn.style.display = "block"
-  searchForestBtn.style.display = "block"
-  searchDesertBtn.style.display = "block"
+  explorePubBtn.style.display = 'block'
+  searchForestBtn.style.display = 'block'
+  searchDesertBtn.style.display = 'block'
 
-  pubDivs.innerHTML = ""
+  pubDivs.innerHTML = ''
 }
 
 function deliverAssetEnding() {
-  desertBoard.style.display = "none"
-  forestBoard.style.display = "none"
+  desertBoard.style.display = 'none'
+  forestBoard.style.display = 'none'
 
-  deliverAssetBtn.style.display = "none"
-  harborChildBtn.style.display = "none"
-  searchForestBtn.style.display = "none"
-  explorePubBtn.style.display = "none"
-  searchDesertBtn.style.display = "none"
-  winDiv.style.display = "none"
+  deliverAssetBtn.style.display = 'none'
+  harborChildBtn.style.display = 'none'
+  searchForestBtn.style.display = 'none'
+  explorePubBtn.style.display = 'none'
+  searchDesertBtn.style.display = 'none'
+  winDiv.style.display = 'none'
 
-  deliverAssetEnd.style.display = "block"
-  returnToPubBtn.style.display = "block"
+  deliverAssetEnd.style.display = 'block'
+  returnToPubBtn.style.display = 'block'
 
-  deliverAssetEnd.innerHTML = ""
-  introEl.textContent = "You decided to deliver The Asset to your client and collect on your bounty."
+  deliverAssetEnd.innerHTML = ''
+  introEl.textContent = 'You decided to deliver The Asset to your client and collect on your bounty.'
 
   let assetStory = document.createElement('div')
 
@@ -495,25 +501,25 @@ function deliverAssetEnding() {
 }
 
 function harborChildEnding() {
-  desertBoard.style.display = "none"
-  forestBoard.style.display = "none"
+  desertBoard.style.display = 'none'
+  forestBoard.style.display = 'none'
 
-  deliverAssetBtn.style.display = "none"
-  harborChildBtn.style.display = "none"
-  searchForestBtn.style.display = "none"
-  explorePubBtn.style.display = "none"
-  searchDesertBtn.style.display = "none"
-  winDiv.style.display = "none"
+  deliverAssetBtn.style.display = 'none'
+  harborChildBtn.style.display = 'none'
+  searchForestBtn.style.display = 'none'
+  explorePubBtn.style.display = 'none'
+  searchDesertBtn.style.display = 'none'
+  winDiv.style.display = 'none'
 
-  deliverAssetEnd.style.display = "block"
-  returnToPubBtn.style.display = "block"
+  deliverAssetEnd.style.display = 'block'
+  returnToPubBtn.style.display = 'block'
 
-  deliverAssetEnd.innerHTML = ""
-  introEl.textContent = "You decided to harbor The Child and become a fugitive. Your client will be very, very angry. And it is highly likely that the old Imperial Army will send Stormtroopers after you to find this valuable Asset they so badly want."
+  deliverAssetEnd.innerHTML = ''
+  introEl.textContent = 'You decided to harbor The Child and become a fugitive. Your client will be very, very angry. And it is highly likely that the old Imperial Army will send Stormtroopers after you to find this valuable Asset they so badly want.'
 
   let assetStory = document.createElement('div')
 
-  assetStory.innerHTML = "Had you known your bounty mission was to recover a Child, you likely would not have accepted. While you do not dare call yourself a parent, you now are responsible for protecting The Child and bringing it somewhere safe. Probably time to consider trading the spaceship in for a minivan. Go forth and find the rightful place for this Child of unknown species. Be safe on your journey. The End...for now."
+  assetStory.innerHTML = 'Had you known your bounty mission was to recover a Child, you likely would not have accepted. While you do not dare call yourself a parent, you now are responsible for protecting The Child and bringing it somewhere safe. Probably time to consider trading the spaceship in for a minivan. Go forth and find the rightful place for this Child of unknown species. Be safe on your journey. The End...for now.'
 
   deliverAssetEnd.appendChild(assetStory)
 }
