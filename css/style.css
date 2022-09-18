@@ -234,6 +234,29 @@ video {
   animation: shine 3s linear infinite;
 }
 
+.pubDiv, #pubVidDiv {
+  background: black;
+}
+
+.pubButton, #pubVidBtn {
+  font-family: video-cond, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  border-radius: 5%;
+  padding: 10px;
+  margin: 40px;
+  color: #E3F2FD;
+  border: 3px solid;
+  background: linear-gradient(to right, #FFF 20%, #9C3848 40%, #9C3848 60%, #FFF 80%);
+  background-size: 200% auto;
+  background-size: 200% auto;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
 @media only screen and (min-width: 368px) {
   img {
     height: 140px;

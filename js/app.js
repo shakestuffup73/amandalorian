@@ -90,7 +90,8 @@ const pubVidBtn = document.getElementById('pubVidBtn')
 
 const pubDivs = document.getElementsByClassName('pubDiv')
 const pubDiv0 = document.getElementById('pubDiv0')
-const pubDivGif0 = document.getElementById('pubDivGif0')
+
+const pubButton0 = document.getElementById('pubButton0')
 
 
 // EVENT LISTENERS //
@@ -194,7 +195,9 @@ function explorePub() {
     pubMediaDiv.appendChild(div)
 
     let pubButton = document.createElement('button')
+    pubButton.className = 'pubButton'
     pubButton.id = `pubButton${count}`
+    pubButton.textContent = 'Explore Here'
 
     let pubDivInfo = document.createElement('h2')
     pubDivInfo.id = `pubDivInfo${count}`
@@ -236,7 +239,6 @@ function explorePub() {
     }
     firstPubVid();
   }
-
   buildPub();
 }
 
