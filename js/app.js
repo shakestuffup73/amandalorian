@@ -180,33 +180,33 @@ function explorePub() {
 
   mandalorianSong.pause();
   
-  let count = 0;
-  for (i = 0; i < 6; i++) {
+  // let count = 0;
+  // for (i = 0; i < 6; i++) {
     
-    let div = document.createElement('div');
-    div.className = "pubDiv"
-    div.id = `pubDiv${count}`
+  //   let div = document.createElement('div');
+  //   div.className = "pubDiv"
+  //   div.id = `pubDiv${count}`
     
-    let pubDivGif = document.createElement('img')
-    pubDivGif.id = `pubDivGif${count}` 
-    pubDivGif.src = pubGifs[`${count}`]
+  //   let pubDivGif = document.createElement('img')
+  //   pubDivGif.id = `pubDivGif${count}` 
+  //   pubDivGif.src = pubGifs[`${count}`]
   
-    div.appendChild(pubDivGif)
-    pubMediaDiv.appendChild(div)
+  //   div.appendChild(pubDivGif)
+  //   pubMediaDiv.appendChild(div)
 
-    let pubButton = document.createElement('button')
-    pubButton.className = 'pubButton'
-    pubButton.id = `pubButton${count}`
-    pubButton.textContent = 'Explore Here'
+  //   let pubButton = document.createElement('button')
+  //   pubButton.className = 'pubButton'
+  //   pubButton.id = `pubButton${count}`
+  //   pubButton.textContent = 'Explore Here'
 
-    let pubDivInfo = document.createElement('h2')
-    pubDivInfo.id = `pubDivInfo${count}`
+  //   let pubDivInfo = document.createElement('h2')
+  //   pubDivInfo.id = `pubDivInfo${count}`
 
-    div.appendChild(pubDivInfo)
-    div.appendChild(pubButton)
+  //   div.appendChild(pubDivInfo)
+  //   div.appendChild(pubButton)
 
-    count++;
-  }
+  //   count++;
+  // }
 
   function buildPub() {
 
